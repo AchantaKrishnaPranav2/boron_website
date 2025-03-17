@@ -2,13 +2,14 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-a = st.radio("Choose", [":red[B]  :fire:", ":violet[K]  :sparkles:"], captions=["Boron", "Potassium"], index=None)
-if a == ":violet[K]  :sparkles:":
-    
-    st.set_page_config(
+st.set_page_config(
         page_title="Boron Properties",
         page_icon="🧪",
     )
+a = st.radio("Choose", [":red[B]  :fire:", ":violet[K]  :sparkles:"], captions=["Boron", "Potassium"], index=None)
+if a == ":violet[K]  :sparkles:":
+    
+    
     
     st.markdown("# Welcome to Boron Properties")
     st.sidebar.success("Select a page above.")
