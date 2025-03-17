@@ -1,16 +1,21 @@
+
 import streamlit as st
 
-st.set_page_config(page_title="Boron Occurrences & Applications", page_icon="🌍")
+st.set_page_config(
+    page_title="Boron - Occurrences and Applications",
+    page_icon="🔎",
+)
 
-st.markdown("# Boron Occurrences & Applications")
-st.write("""
-Boron is found in **nature** and used in a variety of industries.  
-- **Occurrences**: Found in borate minerals like **borax** and **kernite**  
-- **Applications**:
-  - **Glass & Ceramics**: Enhances durability  
-  - **Agriculture**: Essential for plant growth  
-  - **Nuclear Reactors**: Used as a neutron absorber  
-  - **Medicine**: Boron neutron capture therapy (BNCT)  
-Learn more about how boron is extracted and utilized worldwide!
+st.title("🔎 Boron - Occurrences and Applications")
+
+st.subheader("🌍 Natural Occurrence of Boron")
+st.write("Boron is primarily found in **borax (Na₂B₄O₇·10H₂O)**, **kernite**, and **colemanite**. It is commonly extracted from **Turkey, the USA, and Argentina**.")
+
+st.subheader("⚙️ Applications of Boron")
+st.markdown("""
+- **Glass and Ceramics**: Borosilicate glass is highly heat-resistant.
+- **Nuclear Reactors**: Boron absorbs neutrons, preventing chain reactions.
+- **Detergents and Bleaches**: Boron compounds like perborates are used in cleaning products.
+- **Agriculture**: Boron is an essential micronutrient for plant growth.
+- **Electronics**: Used in semiconductors and doping materials.
 """)
-
