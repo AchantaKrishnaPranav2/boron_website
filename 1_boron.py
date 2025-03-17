@@ -7,7 +7,7 @@ st.set_page_config(
         page_icon="🧪",
     )
 a = st.radio("Choose", [":red[B]  :fire:", ":violet[K]  :sparkles:"], captions=["Boron", "Potassium"], index=None)
-if a == ":violet[K]  :sparkles:":
+if a == ":red[B]  :fire:":
     
     
     
