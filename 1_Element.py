@@ -261,6 +261,68 @@ elif a == ":violet[K]  ✨ Potassium":
     st.divider()
 
 else:
+    import pygame
+    import math
+    
+    # Initialize Pygame
+    pygame.init()
+    
+    # Constants
+    WIDTH, HEIGHT = 300, 200  # Small size
+    WHITE = (255, 255, 255)
+    BLACK = (0, 0, 0)
+    TEXT_COLOR = (0, 255, 0)
+    FPS = 60
+    
+    # Create window
+    screen = pygame.display.set_mode((WIDTH, HEIGHT))
+    pygame.display.set_caption("Backroom Engineers Logo")
+    
+    # Load gear image
+    gear = pygame.image.load("gear.png")  # You need to add a small gear image
+    gear = pygame.transform.scale(gear, (50, 50))  # Resize the gear
+    
+    # Font setup
+    font = pygame.font.Font(None, 24)  # Small readable font
+    
+    # Animation variables
+    angle = 0
+    text_x = WIDTH // 2
+    direction = 1  # Text movement direction
+    
+    # Game loop
+    running = True
+    clock = pygame.time.Clock()
+    
+    while running:
+        screen.fill(BLACK)
+    
+        # Rotate gear
+        rotated_gear = pygame.transform.rotate(gear, angle)
+        gear_rect = rotated_gear.get_rect(center=(WIDTH // 2, HEIGHT // 3))
+        screen.blit(rotated_gear, gear_rect.topleft)
+    
+        # Moving text
+        text_surface = font.render("Backroom Engineers", True, TEXT_COLOR)
+        text_rect = text_surface.get_rect(center=(text_x, HEIGHT - 50))
+        screen.blit(text_surface, text_rect)
+    
+        # Update animation
+        angle += 3  # Rotate gear
+        text_x += direction * 2  # Move text
+        if text_x > WIDTH - 60 or text_x < 60:
+            direction *= -1  # Reverse direction
+    
+        # Event handling
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                running = False
+    
+        pygame.display.flip()
+        clock.tick(FPS)
+    
+    pygame.quit()
+
     st.markdown("""
     ### 📚 Project Submission
     ---
