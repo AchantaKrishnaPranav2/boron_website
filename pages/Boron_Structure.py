@@ -74,8 +74,40 @@ if a == ":red[B]  🔥 Boron":
     )
     
     st.plotly_chart(fig, use_container_width=True)
+    
 
     st.caption("Source: [Wikipedia - Boron](https://en.wikipedia.org/wiki/Boron)")
+    import streamlit as st
+
+    # Boron's Crystal Structure
+    st.subheader("🔹 Why does Boron have a Complex Structure?")
+    col1, col2, col3 = st.columns(3)
+    
+    col1.markdown("<h5 style='color:#ff5733; text-align: center;'>Covalent Bonding</h5>", unsafe_allow_html=True)
+    col1.write("Boron forms strong covalent bonds, leading to complex icosahedral structures instead of simple BCC or FCC.")
+    
+    col2.markdown("<h5 style='color:#ff5733; text-align: center;'>High Melting Point</h5>", unsafe_allow_html=True)
+    col2.write("Due to strong bonding, boron has a very high melting point (~2076°C), making it structurally rigid.")
+    
+    col3.markdown("<h5 style='color:#ff5733; text-align: center;'>Allotropic Forms</h5>", unsafe_allow_html=True)
+    col3.write("Boron exists in multiple crystalline and amorphous forms, including α-Boron and β-Boron.")
+    
+    st.divider()
+    
+    # Mechanical Properties of Boron
+    st.subheader("🔹 Young’s Modulus of Boron")
+    st.write("**Young's Modulus of Boron:** 450 GPa")
+    st.write("🔹 **Application:** Used in **high-strength aerospace materials** and **lightweight structural components**.")
+    
+    st.subheader("🔹 Bulk Modulus of Boron")
+    st.write("**Bulk Modulus of Boron:** 320 GPa")
+    st.write("🔹 **Application:** Used in **boron carbide armor** and **cutting tools** due to its high incompressibility.")
+    
+    st.subheader("🔹 Shear Modulus of Boron")
+    st.write("**Shear Modulus of Boron:** 190 GPa")
+    st.write("🔹 **Application:** Used in **high-rigidity composites** like **Boron fiber-reinforced polymers** for aircraft.")
+    
+
 elif a == ":violet[K]  ✨ Potassium":
     import streamlit as st
     import plotly.graph_objects as go
