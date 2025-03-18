@@ -3,5 +3,5 @@ numpy
 matplotlib
 plotly
 pandas
-pygame
+turtle
 
