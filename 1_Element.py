@@ -261,12 +261,13 @@ elif a == ":violet[K]  ✨ Potassium":
     st.divider()
 
 else:
-    st.write(   ██████  ██   ██ ███    ███  
-                ██   ██ ██   ██ ████  ████  
-                ██████  ███████ ██ ████ ██  
-                ██      ██   ██ ██  ██  ██  
-                ██      ██   ██ ██      ██  
-                )
+    import turtle
+
+    turtle.speed(3)
+    turtle.write("Backroom Engineers", font=("Arial", 20, "bold"))
+    turtle.hideturtle()
+    turtle.done()
+
 
     st.markdown("""
     ### 📚 Project Submission
