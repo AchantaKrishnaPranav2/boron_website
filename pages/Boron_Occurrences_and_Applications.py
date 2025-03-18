@@ -128,10 +128,6 @@ elif a == ":violet[K]  ✨ Potassium":
     import numpy as np
     import matplotlib.pyplot as plt
     
-    st.set_page_config(
-        page_title="Potassium - Occurrences and Applications",
-        page_icon="🔎",
-    )
     
     st.title("🔎 Potassium - Occurrences and Applications")
     st.subheader("🔄 Natural Occurrence of Potassium")
