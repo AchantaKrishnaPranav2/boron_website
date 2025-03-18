@@ -2,7 +2,7 @@ import streamlit as st
 import plotly.graph_objects as go
 
 st.set_page_config(
-    page_title="Boron - Structure",
+    page_title="Structure",
     page_icon="🧩",
 )
 a = st.radio(
