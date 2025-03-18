@@ -264,6 +264,7 @@ else:
     import time
     import sys
     
+    # Define ASCII logo
     logo = [
         "██████╗  █████╗  ██████╗██╗  ██╗██████╗  ██████╗ ███╗   ███╗",
         "██╔══██╗██╔══██╗██╔════╝██║  ██║██╔══██╗██╔═══██╗████╗ ████║",
@@ -273,15 +274,30 @@ else:
         "╚═╝     ╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝╚═════╝  ╚═════╝ ╚═╝     ╚═╝",
     ]
     
+    # ANSI color codes for green text
+    GREEN = "\033[92m"
+    RESET = "\033[0m"
+    
     def animate_logo():
-        for i in range(20):  # Number of cycles
-            sys.stdout.write("\033c")  # Clears the terminal
-            for line in logo:
-                print(" " * (i % 10) + line)  # Shifts text left & right
-            time.sleep(0.1)  # Animation speed
+        shift = 0  # Initial shift
+        direction = 1  # Rightward movement
+        
+        try:
+            while True:  # Infinite loop (Ctrl + C to stop)
+                sys.stdout.write("\033c")  # Clears the terminal
+                for line in logo:
+                    print(GREEN + " " * shift + line + RESET)  # Shifted text with color
+                
+                shift += direction  # Move text
+                if shift == 10 or shift == 0:  # Bounce effect
+                    direction *= -1
+    
+                time.sleep(0.1)  # Speed of animation
+        except KeyboardInterrupt:
+            print("\nExiting animation...")
     
     animate_logo()
-    st.write(logo)
+
 
     st.markdown("""
     ### 📚 Project Submission
