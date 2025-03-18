@@ -286,12 +286,12 @@ else:
         radii = [0.6, 1.0, 1.4]  # Different orbits
     
         def update(frame):
-        for i, electron in enumerate(electron_paths):
-            angle = 2 * np.pi * (frame / 60) + (i * np.pi / 3)
-            x = np.array([radii[i] * np.cos(angle)])  # Ensure x is a sequence
-            y = np.array([radii[i] * np.sin(angle)])  # Ensure y is a sequence
-            electron.set_data(x, y)
-        return electron_paths
+            for i, electron in enumerate(electron_paths):
+                angle = 2 * np.pi * (frame / 60) + (i * np.pi / 3)
+                x = np.array([radii[i] * np.cos(angle)])  # Ensure x is a sequence
+                y = np.array([radii[i] * np.sin(angle)])  # Ensure y is a sequence
+                electron.set_data(x, y)
+            return electron_paths
 
     
         ani = animation.FuncAnimation(fig, update, frames=60, interval=50, blit=True)
