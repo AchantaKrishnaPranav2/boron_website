@@ -14,18 +14,16 @@ a = st.radio(
     [":red[B]  🔥 Boron", ":violet[K]  ✨ Potassium"],
     index=None
 )
-    
+
 # Main content
 if a == ":red[B]  🔥 Boron":
     st.markdown("# **Welcome to the World of Boron** 🧪")
     st.write("Explore the fascinating properties, occurrence, and uses of Boron.")
 
-    
-
     st.markdown("<h1 style='color:#ffffff;'>🧪 Boron: A Unique Metalloid</h1>", unsafe_allow_html=True)
-    
+
     col1, col2 = st.columns([1.2, 2])
-    col1.image("https://upload.wikimedia.org/wikipedia/commons/1/19/Boron_R105.jpg",caption = "boron (β-rhombohedral)")
+    col1.image("https://upload.wikimedia.org/wikipedia/commons/1/19/Boron_R105.jpg", caption="Boron (β-rhombohedral)")
     col2.markdown(
         '''
         <style>
@@ -63,6 +61,11 @@ if a == ":red[B]  🔥 Boron":
     col2.metric(label="Heat of fusion", value="50.2 kJ/mol")
     col3.metric(label="Heat of vaporization", value="480 kJ/mol")
 
+    col1, col2, col3 = st.columns(3)
+    col1.metric(label="Thermal Conductivity", value="27 W/m·K")
+    col2.metric(label="Specific Heat Capacity", value="1.02 J/g·K")
+    col3.metric(label="Refractive Index", value="2.46 (crystalline)")
+
     # Plotting Boron Vapor Pressure
     Temp = np.array([1000, 2000, 3000, 4000, 5000])
     pressure = np.array([0.1, 1, 10, 100, 1000])
@@ -89,65 +92,20 @@ if a == ":red[B]  🔥 Boron":
     st.pyplot(fig)
 
     st.divider()
-     # Boron Origin - Using Expander for interactivity
-    with st.expander("🌌 **Origin and Occurrence of Boron**"):
-        st.markdown(
-            """
-            Boron is synthesized entirely through **cosmic ray spallation and supernovas**,  
-            unlike most elements that form through **stellar nucleosynthesis**.  
-            As a result, **it is a low-abundance element** in both the **Solar System** and Earth's crust.
-            """
-        )
-        st.info("🔍 **Did you know?** Boron makes up only **0.001%** of Earth's crust!")
 
-    # Industrial Deposits & Extraction
-    with st.expander("🏭 **Industrial Deposits & Extraction**"):
-        st.write(
-            """
-            While **β-rhombohedral boron is the most stable**,  
-            the transformation of other phases at **room temperature is negligible**.  
-            As a result, all **five key crystalline phases** can exist under normal conditions.
-            """
-        )
-        st.success("✅ **Key Takeaway:** Even metastable boron phases remain unchanged at room temperature!")
+    # Boron Discoverers with Images
+    st.markdown("<h1 style='color:#ffffff;'>🧑‍🔬 Discovery of Boron</h1>", unsafe_allow_html=True)
+    
+    st.info("Boron was discovered in 1808 by three scientists: **Humphry Davy, Joseph Louis Gay-Lussac, and Louis Jacques Thénard**.")
+    
+    col1, col2, col3 = st.columns(3)
+    col1.image("https://cdn.britannica.com/96/12396-050-A1110D81/Humphry-Davy-Thomas-Lawrence-detail-oil-painting.jpg", caption="Sir Humphry Davy", use_column_width=True)
+    col2.image("https://upload.wikimedia.org/wikipedia/commons/7/79/Joseph_Louis_Gay-Lussac.jpg", caption="Joseph Louis Gay-Lussac", use_column_width=True)
+    col3.image("https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Louis-Jacques_Th%C3%A9nard.jpg/330px-Louis-Jacques_Th%C3%A9nard.jpg", caption="Louis Jacques Thénard", use_column_width=True)
+    
+    st.write("Boron was first isolated in 1808 through electrolysis by **Humphry Davy**, and independently by **Joseph Gay-Lussac and Louis Thenard**. It is found naturally in borax and is widely used in various industries today.")
 
-
-    # Elemental Boron Occurrence
-    with st.expander("☄️ **Elemental Boron in Nature**"):
-        st.write(
-            """
-            **Polycrystalline β-rhombohedral boron** is the most common form found.  
-            - It is **extremely hard** and **lightweight** (about **10% lighter than aluminum**).  
-            - It has a **high melting point of 2080°C**, surpassing steel.
-            
-            **Amorphous Boron Powder** is another prevalent form.
-            """
-        )
-        st.info("🔥 **Fun Fact:** β-rhombohedral boron is one of the hardest materials known, competing with diamonds in hardness!")
-
-    # Boron Allotropes
-    with st.expander("🧪 **Allotropes of Boron**"):
-        st.write(
-            """
-            **Boron exists in multiple crystalline and amorphous forms.**  
-            The well-known crystalline forms include:
-            - **α-Rhombohedral (α-R)**
-            - **β-Rhombohedral (β-R) (Most Stable)**
-            - **β-Tetragonal (β-T)**  
-            
-            Under special conditions, boron can also be synthesized in:
-            - **α-Tetragonal (α-T)**
-            - **γ-Orthorhombic (γ)**
-            
-            🔹 **Amorphous Forms:**  
-            - **Fine Powder**  
-            - **Glassy Solid**
-            
-            📌 Although at least **14 additional allotropes** have been reported, many lack experimental confirmation or contain impurity-stabilized structures.
-            """
-        )
-        st.warning("⚠️ **β-Rhombohedral is the most stable form, but other phases can also exist at room temperature!**")
-
+    st.divider()
 
     # Uses of Boron
     with st.expander("🔬 **Applications of Boron**"):
@@ -159,9 +117,13 @@ if a == ":red[B]  🔥 Boron":
         )
         st.success("🔧 **Boron’s Role**: Used in aerospace, bulletproof vests, and composite materials!")
 
+    # Fun Facts
+    st.markdown("<h2 style='color:#ffffff;'>💡 Fun Facts about Boron</h2>", unsafe_allow_html=True)
+    st.info("✅ Boron is essential for plant growth but toxic in high amounts!")
+    st.info("✅ **Boron carbide** (B₄C) is used in tank armor and bulletproof vests.")
+    st.info("✅ **Boron nitride** is as hard as diamond but lubricates like graphite.")
 
-    st.markdown("<h1 style='color:#ffffff;'>🪶 History</h1>", unsafe_allow_html=True)
-    st.info("Boron was discovered in 1808 by **Humphry Davy and Joseph Gay-Lussac**.")
-    col1, col2 = st.columns([2, 1])
-    col2.image("https://cdn.britannica.com/96/12396-050-A1110D81/Humphry-Davy-Thomas-Lawrence-detail-oil-painting.jpg", caption="Sir Humphry Davy, one of the discoverers of Boron.")
-    col1.write("Boron was first isolated in 1808 through electrolysis by Humphry Davy and independently by Joseph Gay-Lussac and Louis Thenard. It is found naturally in borax and is used in various industrial applications today.")
+    st.divider()
+
+    st.markdown("🚀 **Explore More:** [Wikipedia - Boron](https://en.wikipedia.org/wiki/Boron)")
+
