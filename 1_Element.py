@@ -261,39 +261,26 @@ elif a == ":violet[K]  ✨ Potassium":
     st.divider()
 
 else:
-    import tkinter as tk
-
-    # Create the main window
-    root = tk.Tk()
-    root.title("Backroom Engineers Logo")
-    root.geometry("300x150")  # Small size
-    root.configure(bg="black")  # Cool dark theme
+    import time
+    import sys
     
-    # Create a canvas for animation
-    canvas = tk.Canvas(root, width=300, height=150, bg="black", highlightthickness=0)
-    canvas.pack()
+    logo = [
+        "██████╗  █████╗  ██████╗██╗  ██╗██████╗  ██████╗ ███╗   ███╗",
+        "██╔══██╗██╔══██╗██╔════╝██║  ██║██╔══██╗██╔═══██╗████╗ ████║",
+        "██████╔╝███████║██║     ███████║██║  ██║██║   ██║██╔████╔██║",
+        "██╔═══╝ ██╔══██║██║     ██╔══██║██║  ██║██║   ██║██║╚██╔╝██║",
+        "██║     ██║  ██║╚██████╗██║  ██║██████╔╝╚██████╔╝██║ ╚═╝ ██║",
+        "╚═╝     ╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝╚═════╝  ╚═════╝ ╚═╝     ╚═╝",
+    ]
     
-    # Add moving text
-    text = canvas.create_text(150, 75, text="Backroom Engineers", font=("Helvetica", 16, "bold"), fill="green")
+    def animate_logo():
+        for i in range(20):  # Number of cycles
+            sys.stdout.write("\033c")  # Clears the terminal
+            for line in logo:
+                print(" " * (i % 10) + line)  # Shifts text left & right
+            time.sleep(0.1)  # Animation speed
     
-    # Animation function
-    dx = 2  # Speed
-    def animate():
-        global dx
-        x1, _, x2, _ = canvas.bbox(text)
-        
-        # Bounce effect
-        if x2 >= 300 or x1 <= 0:
-            dx = -dx  # Reverse direction
-    
-        canvas.move(text, dx, 0)
-        root.after(30, animate)  # Update animation every 30ms
-    
-    # Start animation
-    animate()
-    
-    # Run the Tkinter loop
-    root.mainloop()
+    animate_logo()
 
 
     st.markdown("""
