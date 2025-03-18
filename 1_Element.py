@@ -261,12 +261,12 @@ elif a == ":violet[K]  ✨ Potassium":
     st.divider()
 
 else:
-    import turtle
+    <svg width="200" height="50">
+      <text x="10" y="40" font-family="Arial" font-size="30" fill="black">
+        Backroom Engineers
+      </text>
+    </svg>
 
-    turtle.speed(3)
-    turtle.write("Backroom Engineers", font=("Arial", 20, "bold"))
-    turtle.hideturtle()
-    turtle.done()
 
 
     st.markdown("""
