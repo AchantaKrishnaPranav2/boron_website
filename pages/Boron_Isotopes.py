@@ -72,91 +72,91 @@ if a == ":red[B]  🔥 Boron":
     
     st.divider()
     import numpy as np
-import matplotlib.pyplot as plt
-import streamlit as st
-
-# Header
-st.header("🔋 Decay Simulation")
-st.markdown("The isotope decay formula follows exponential decay and is given by:")
-st.latex("N = N_0e^{-\\lambda t}")
-st.latex("\\lambda = \\ln2 / t_{1/2}")
-st.write("        ")
-
-# Columns for equation terms
-col1, col2 = st.columns(2)
-col1.markdown("$\\lambda = $ Decay constant")
-col1.markdown("$t_{1/2} = $ Half-life")
-col1.markdown("$N = $ Number of atoms remaining after time")
-col2.markdown("$N_0 = $ Initial number of atoms")
-col2.markdown("$t = $ Time elapsed")
-
-# Dictionary of Boron Isotopes and their half-lives
-boron_isotopes = {
-    "B-8": {"half_life": 0.770, "unit": "seconds"},
-    "B-10": {"half_life": 1e20, "unit": "years"},  # Stable isotope
-    "B-11": {"half_life": 1e20, "unit": "years"},  # Stable isotope
-    "B-12": {"half_life": 20.2, "unit": "milliseconds"},
-}
-
-# Select Boron Isotope
-selected_isotope = st.selectbox("Select a Boron Isotope:", list(boron_isotopes.keys()))
-
-half_life = boron_isotopes[selected_isotope]["half_life"]
-unit = boron_isotopes[selected_isotope]["unit"]
-
-if selected_isotope:
-    st.info(f"The half-life of {selected_isotope} is {half_life} {unit}")
-
-# Convert half-life to seconds
-unit_conversion = {"seconds": 1, "milliseconds": 1e-3, "years": 365 * 24 * 3600}
-half_life_seconds = half_life * unit_conversion[unit]
-
-# Initial Atoms Slider
-initial_atoms = st.slider("Initial number of atoms (N₀):", 1, 1000, 500)
-
-# Adjust max time for simulation
-if unit == "seconds":
-    max_time = 10 * half_life
-elif unit == "milliseconds":
-    max_time = 10 * half_life
-elif unit == "years":
-    max_time = 3 * half_life
-
-elapsed_time = st.slider(f"Select elapsed time ({unit}):", 0.0, max_time, 0.1)
-
-# Decay calculations
-if selected_isotope in ["B-10", "B-11"]:
-    N_remaining = initial_atoms  # Stable isotopes
-    st.info(f"{selected_isotope} is a **stable isotope**, meaning it does not decay.")
-else:
-    decay_constant = np.log(2) / half_life_seconds
-    N_remaining = initial_atoms * np.exp(-decay_constant * (elapsed_time * unit_conversion[unit]))
-    st.info(f"After **{elapsed_time:.2f} {unit}**, approximately **{N_remaining:.2f}** atoms remain.")
-
-# Generate decay curve
-if selected_isotope not in ["B-10", "B-11"]:  # Skip plotting for stable isotopes
-    time_values = np.linspace(0, max_time, 500)
-    N_values = initial_atoms * np.exp(-decay_constant * (time_values * unit_conversion[unit]))
-
-    plt.style.use("seaborn-v0_8-dark")
-    fig, ax = plt.subplots(figsize=(7, 4), facecolor="#0e1117")
-    ax.plot(time_values, N_values, label=f"{selected_isotope} Decay", color="#ff5733", linewidth=2, marker="o", markersize=4, markerfacecolor="white", markeredgecolor="#ff5733", alpha=0.8)
-
-    ax.set_facecolor("#0e1117")
-    ax.spines["top"].set_visible(False)
-    ax.spines["right"].set_visible(False)
-    ax.spines["left"].set_color("white")
-    ax.spines["bottom"].set_color("white")
-    ax.xaxis.label.set_color("white")
-    ax.yaxis.label.set_color("white")
-    ax.tick_params(axis="x", colors="white")
-    ax.tick_params(axis="y", colors="white")
-    ax.grid(color="gray", linestyle="--", linewidth=0.5, alpha=0.5)
-    ax.set_title(f"Exponential Decay of {selected_isotope}", fontsize=14, fontweight="bold", color="white")
-    ax.set_xlabel(f"Time ({unit})", fontsize=12, fontweight="bold")
-    ax.set_ylabel("Number of Atoms", fontsize=12, fontweight="bold")
-    st.pyplot(fig)
-    st.divider()
+    import matplotlib.pyplot as plt
+    import streamlit as st
+    
+    # Header
+    st.header("🔋 Decay Simulation")
+    st.markdown("The isotope decay formula follows exponential decay and is given by:")
+    st.latex("N = N_0e^{-\\lambda t}")
+    st.latex("\\lambda = \\ln2 / t_{1/2}")
+    st.write("        ")
+    
+    # Columns for equation terms
+    col1, col2 = st.columns(2)
+    col1.markdown("$\\lambda = $ Decay constant")
+    col1.markdown("$t_{1/2} = $ Half-life")
+    col1.markdown("$N = $ Number of atoms remaining after time")
+    col2.markdown("$N_0 = $ Initial number of atoms")
+    col2.markdown("$t = $ Time elapsed")
+    
+    # Dictionary of Boron Isotopes and their half-lives
+    boron_isotopes = {
+        "B-8": {"half_life": 0.770, "unit": "seconds"},
+        "B-10": {"half_life": 1e20, "unit": "years"},  # Stable isotope
+        "B-11": {"half_life": 1e20, "unit": "years"},  # Stable isotope
+        "B-12": {"half_life": 20.2, "unit": "milliseconds"},
+    }
+    
+    # Select Boron Isotope
+    selected_isotope = st.selectbox("Select a Boron Isotope:", list(boron_isotopes.keys()))
+    
+    half_life = boron_isotopes[selected_isotope]["half_life"]
+    unit = boron_isotopes[selected_isotope]["unit"]
+    
+    if selected_isotope:
+        st.info(f"The half-life of {selected_isotope} is {half_life} {unit}")
+    
+    # Convert half-life to seconds
+    unit_conversion = {"seconds": 1, "milliseconds": 1e-3, "years": 365 * 24 * 3600}
+    half_life_seconds = half_life * unit_conversion[unit]
+    
+    # Initial Atoms Slider
+    initial_atoms = st.slider("Initial number of atoms (N₀):", 1, 1000, 500)
+    
+    # Adjust max time for simulation
+    if unit == "seconds":
+        max_time = 10 * half_life
+    elif unit == "milliseconds":
+        max_time = 10 * half_life
+    elif unit == "years":
+        max_time = 3 * half_life
+    
+    elapsed_time = st.slider(f"Select elapsed time ({unit}):", 0.0, max_time, 0.1)
+    
+    # Decay calculations
+    if selected_isotope in ["B-10", "B-11"]:
+        N_remaining = initial_atoms  # Stable isotopes
+        st.info(f"{selected_isotope} is a **stable isotope**, meaning it does not decay.")
+    else:
+        decay_constant = np.log(2) / half_life_seconds
+        N_remaining = initial_atoms * np.exp(-decay_constant * (elapsed_time * unit_conversion[unit]))
+        st.info(f"After **{elapsed_time:.2f} {unit}**, approximately **{N_remaining:.2f}** atoms remain.")
+    
+    # Generate decay curve
+    if selected_isotope not in ["B-10", "B-11"]:  # Skip plotting for stable isotopes
+        time_values = np.linspace(0, max_time, 500)
+        N_values = initial_atoms * np.exp(-decay_constant * (time_values * unit_conversion[unit]))
+    
+        plt.style.use("seaborn-v0_8-dark")
+        fig, ax = plt.subplots(figsize=(7, 4), facecolor="#0e1117")
+        ax.plot(time_values, N_values, label=f"{selected_isotope} Decay", color="#ff5733", linewidth=2, marker="o", markersize=4, markerfacecolor="white", markeredgecolor="#ff5733", alpha=0.8)
+    
+        ax.set_facecolor("#0e1117")
+        ax.spines["top"].set_visible(False)
+        ax.spines["right"].set_visible(False)
+        ax.spines["left"].set_color("white")
+        ax.spines["bottom"].set_color("white")
+        ax.xaxis.label.set_color("white")
+        ax.yaxis.label.set_color("white")
+        ax.tick_params(axis="x", colors="white")
+        ax.tick_params(axis="y", colors="white")
+        ax.grid(color="gray", linestyle="--", linewidth=0.5, alpha=0.5)
+        ax.set_title(f"Exponential Decay of {selected_isotope}", fontsize=14, fontweight="bold", color="white")
+        ax.set_xlabel(f"Time ({unit})", fontsize=12, fontweight="bold")
+        ax.set_ylabel("Number of Atoms", fontsize=12, fontweight="bold")
+        st.pyplot(fig)
+        st.divider()
     # 🔬 Applications of Boron Isotopes
     st.subheader("🔬 Applications of Boron Isotopes")
     
