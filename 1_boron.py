@@ -20,78 +20,6 @@ if a == ":red[B]  🔥 Boron":
     st.markdown("# **Welcome to the World of Boron** 🧪")
     st.write("Explore the fascinating properties, occurrence, and uses of Boron.")
 
-    # Boron Origin - Using Expander for interactivity
-    with st.expander("🌌 **Origin and Occurrence of Boron**"):
-        st.markdown(
-            """
-            Boron is synthesized entirely through **cosmic ray spallation and supernovas**,  
-            unlike most elements that form through **stellar nucleosynthesis**.  
-            As a result, **it is a low-abundance element** in both the **Solar System** and Earth's crust.
-            """
-        )
-        st.info("🔍 **Did you know?** Boron makes up only **0.001%** of Earth's crust!")
-
-    # Industrial Deposits & Extraction
-    with st.expander("🏭 **Industrial Deposits & Extraction**"):
-        st.write(
-            """
-            While **β-rhombohedral boron is the most stable**,  
-            the transformation of other phases at **room temperature is negligible**.  
-            As a result, all **five key crystalline phases** can exist under normal conditions.
-            """
-        )
-        st.success("✅ **Key Takeaway:** Even metastable boron phases remain unchanged at room temperature!")
-
-
-    # Elemental Boron Occurrence
-    with st.expander("☄️ **Elemental Boron in Nature**"):
-        st.write(
-            """
-            **Polycrystalline β-rhombohedral boron** is the most common form found.  
-            - It is **extremely hard** and **lightweight** (about **10% lighter than aluminum**).  
-            - It has a **high melting point of 2080°C**, surpassing steel.
-            
-            **Amorphous Boron Powder** is another prevalent form.
-            """
-        )
-        st.info("🔥 **Fun Fact:** β-rhombohedral boron is one of the hardest materials known, competing with diamonds in hardness!")
-
-    # Boron Allotropes
-    with st.expander("🧪 **Allotropes of Boron**"):
-        st.write(
-            """
-            **Boron exists in multiple crystalline and amorphous forms.**  
-            The well-known crystalline forms include:
-            - **α-Rhombohedral (α-R)**
-            - **β-Rhombohedral (β-R) (Most Stable)**
-            - **β-Tetragonal (β-T)**  
-            
-            Under special conditions, boron can also be synthesized in:
-            - **α-Tetragonal (α-T)**
-            - **γ-Orthorhombic (γ)**
-            
-            🔹 **Amorphous Forms:**  
-            - **Fine Powder**  
-            - **Glassy Solid**
-            
-            📌 Although at least **14 additional allotropes** have been reported, many lack experimental confirmation or contain impurity-stabilized structures.
-            """
-        )
-        st.warning("⚠️ **β-Rhombohedral is the most stable form, but other phases can also exist at room temperature!**")
-
-
-    # Uses of Boron
-    with st.expander("🔬 **Applications of Boron**"):
-        st.write(
-            """
-            The **primary application** of boron is in **boron filaments**,  
-            which have **high-strength properties** similar to **carbon fibers**.
-            """
-        )
-        st.success("🔧 **Boron’s Role**: Used in aerospace, bulletproof vests, and composite materials!")
-
-
-    st.markdown("# Welcome to Boron Properties")
     
 
     st.markdown("<h1 style='color:#ffffff;'>🧪 Boron: A Unique Metalloid</h1>", unsafe_allow_html=True)
@@ -161,6 +89,76 @@ if a == ":red[B]  🔥 Boron":
     st.pyplot(fig)
 
     st.divider()
+     # Boron Origin - Using Expander for interactivity
+    with st.expander("🌌 **Origin and Occurrence of Boron**"):
+        st.markdown(
+            """
+            Boron is synthesized entirely through **cosmic ray spallation and supernovas**,  
+            unlike most elements that form through **stellar nucleosynthesis**.  
+            As a result, **it is a low-abundance element** in both the **Solar System** and Earth's crust.
+            """
+        )
+        st.info("🔍 **Did you know?** Boron makes up only **0.001%** of Earth's crust!")
+
+    # Industrial Deposits & Extraction
+    with st.expander("🏭 **Industrial Deposits & Extraction**"):
+        st.write(
+            """
+            While **β-rhombohedral boron is the most stable**,  
+            the transformation of other phases at **room temperature is negligible**.  
+            As a result, all **five key crystalline phases** can exist under normal conditions.
+            """
+        )
+        st.success("✅ **Key Takeaway:** Even metastable boron phases remain unchanged at room temperature!")
+
+
+    # Elemental Boron Occurrence
+    with st.expander("☄️ **Elemental Boron in Nature**"):
+        st.write(
+            """
+            **Polycrystalline β-rhombohedral boron** is the most common form found.  
+            - It is **extremely hard** and **lightweight** (about **10% lighter than aluminum**).  
+            - It has a **high melting point of 2080°C**, surpassing steel.
+            
+            **Amorphous Boron Powder** is another prevalent form.
+            """
+        )
+        st.info("🔥 **Fun Fact:** β-rhombohedral boron is one of the hardest materials known, competing with diamonds in hardness!")
+
+    # Boron Allotropes
+    with st.expander("🧪 **Allotropes of Boron**"):
+        st.write(
+            """
+            **Boron exists in multiple crystalline and amorphous forms.**  
+            The well-known crystalline forms include:
+            - **α-Rhombohedral (α-R)**
+            - **β-Rhombohedral (β-R) (Most Stable)**
+            - **β-Tetragonal (β-T)**  
+            
+            Under special conditions, boron can also be synthesized in:
+            - **α-Tetragonal (α-T)**
+            - **γ-Orthorhombic (γ)**
+            
+            🔹 **Amorphous Forms:**  
+            - **Fine Powder**  
+            - **Glassy Solid**
+            
+            📌 Although at least **14 additional allotropes** have been reported, many lack experimental confirmation or contain impurity-stabilized structures.
+            """
+        )
+        st.warning("⚠️ **β-Rhombohedral is the most stable form, but other phases can also exist at room temperature!**")
+
+
+    # Uses of Boron
+    with st.expander("🔬 **Applications of Boron**"):
+        st.write(
+            """
+            The **primary application** of boron is in **boron filaments**,  
+            which have **high-strength properties** similar to **carbon fibers**.
+            """
+        )
+        st.success("🔧 **Boron’s Role**: Used in aerospace, bulletproof vests, and composite materials!")
+
 
     st.markdown("<h1 style='color:#ffffff;'>🪶 History</h1>", unsafe_allow_html=True)
     st.info("Boron was discovered in 1808 by **Humphry Davy and Joseph Gay-Lussac**.")
