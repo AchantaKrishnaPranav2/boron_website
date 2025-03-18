@@ -19,11 +19,11 @@ The primary minerals containing boron include:
 
 col1, col2, col3 = st.columns(3)
 with col1:
-    st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/BoraxChem.png/366px-BoraxChem.png", caption="Borax (Na₂B₄O₇·10H₂O)", use_container_width=True)
+    st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Borax_crystals.jpg/390px-Borax_crystals.jpg", caption="Borax (Na₂B₄O₇·10H₂O)", use_container_width=True)
 with col2:
-    st.image("https://upload.wikimedia.org/wikipedia/commons/1/11/Kernite-212887.jpg", caption="Kernite", use_container_width=True)
+    st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Kernite_-_USGS_Mineral_Specimens_692.jpg/330px-Kernite_-_USGS_Mineral_Specimens_692.jpg", caption="Kernite", use_container_width=True)
 with col3:
-    st.image("https://upload.wikimedia.org/wikipedia/commons/5/5e/Colemanite_1.jpg", caption="Colemanite", use_container_width=True)
+    st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Colemanite_-_USGS_Mineral_Specimens_096.jpg/500px-Colemanite_-_USGS_Mineral_Specimens_096.jpg", caption="Colemanite", use_container_width=True)
 
 st.write("""
 - **Borax (Na₂B₄O₇·10H₂O)** – The most commercially significant boron mineral, used in a variety of industries.  
