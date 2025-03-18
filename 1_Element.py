@@ -165,7 +165,7 @@ if a == ":red[B]  🔥 Boron":
     st.write("He produced enough boron to confirm a new element and named it boracium. ")
     st.write("Gay-Lussac and Thénard used iron to reduce boric acid at high temperatures. ")
     st.write("By oxidizing boron with air, they showed that boric acid is its oxidation product. ")
-    st.divider
+    st.divider()
     st.write("Jöns Jacob Berzelius identified it as an element in 1824. ")
     
     st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/J%C3%B6ns_Jacob_Berzelius_x_Johan_Way.jpg/330px-J%C3%B6ns_Jacob_Berzelius_x_Johan_Way.jpg",caption = "Jöns Jacob Berzelius")
