@@ -19,7 +19,7 @@ The primary minerals containing boron include:
 
 col1, col2, col3 = st.columns(3)
 with col1:
-    st.image("https://upload.wikimedia.org/wikipedia/commons/d/dd/Borax_3D.png", caption="Borax (Na₂B₄O₇·10H₂O)", use_container_width=True)
+    st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/BoraxChem.png/366px-BoraxChem.png", caption="Borax (Na₂B₄O₇·10H₂O)", use_container_width=True)
 with col2:
     st.image("https://upload.wikimedia.org/wikipedia/commons/1/11/Kernite-212887.jpg", caption="Kernite", use_container_width=True)
 with col3:
