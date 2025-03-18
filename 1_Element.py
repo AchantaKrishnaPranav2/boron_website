@@ -281,7 +281,7 @@ else:
             time.sleep(0.1)  # Animation speed
     
     animate_logo()
-
+    st.write(logo)
 
     st.markdown("""
     ### 📚 Project Submission
