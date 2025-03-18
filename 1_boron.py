@@ -99,9 +99,9 @@ if a == ":red[B]  🔥 Boron":
     st.info("Boron was discovered in 1808 by three scientists: **Humphry Davy, Joseph Louis Gay-Lussac, and Louis Jacques Thénard**.")
     
     col1, col2, col3 = st.columns(3)
-    col1.image("https://cdn.britannica.com/96/12396-050-A1110D81/Humphry-Davy-Thomas-Lawrence-detail-oil-painting.jpg", caption="Sir Humphry Davy", use_column_width=True)
-    col2.image("https://upload.wikimedia.org/wikipedia/commons/7/79/Joseph_Louis_Gay-Lussac.jpg", caption="Joseph Louis Gay-Lussac", use_column_width=True)
-    col3.image("https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Louis-Jacques_Th%C3%A9nard.jpg/330px-Louis-Jacques_Th%C3%A9nard.jpg", caption="Louis Jacques Thénard", use_column_width=True)
+    col1.image("https://cdn.britannica.com/96/12396-050-A1110D81/Humphry-Davy-Thomas-Lawrence-detail-oil-painting.jpg", caption="Sir Humphry Davy")
+    col2.image("https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Gaylussac.jpg/338px-Gaylussac.jpg", caption="Joseph Louis Gay-Lussac")
+    col3.image("https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Louis_Jacques_Th%C3%A9nard.jpg/330px-Louis_Jacques_Th%C3%A9nard.jpg", caption="Louis Jacques Thénard")
     
     st.write("Boron was first isolated in 1808 through electrolysis by **Humphry Davy**, and independently by **Joseph Gay-Lussac and Louis Thenard**. It is found naturally in borax and is widely used in various industries today.")
 
