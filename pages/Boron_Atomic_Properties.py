@@ -174,12 +174,33 @@ if a == ":red[B]  🔥 Boron":
     st.divider()
 
 
-
-    # ----------------------------------------
-    # 🧲 Electron Affinity
-    # ----------------------------------------
-    st.subheader("🧲 Electron Affinity")
-    st.write("Boron has an electron affinity of approximately **26.7 kJ/mol**.")
+    # Atomic and Ionic Radii
+    st.subheader("📏 Atomic and Ionic Radii")
+    st.write("Boron has a relatively small atomic radius of 85 pm. When it forms B³⁺, its ionic radius significantly decreases to approximately 23 pm.")
+    
+    # Electronegativity & Electron Affinity
+    st.subheader("🔋 Electronegativity & Electron Affinity")
+    st.write("Boron has a relatively high electronegativity of 2.04 and a moderate electron affinity of 26.7 kJ/mol, meaning it tends to attract electrons in chemical bonds.")
+    
+    # Oxidation States & Reactivity
+    st.subheader("🔥 Oxidation States & Reactivity")
+    st.write("Boron primarily exhibits a +3 oxidation state. Unlike alkali metals, boron is relatively unreactive but forms strong covalent bonds, especially in borates and boron compounds.")
+    
+    # Melting & Boiling Points
+    st.subheader("🌡️ Melting & Boiling Points")
+    st.write("Boron has a high melting point of 2076°C and a boiling point of 3927°C, reflecting its strong covalent bonding.")
+    
+    # Density & Atomic Volume
+    st.subheader("⚖️ Density & Atomic Volume")
+    st.write("Boron has a density of 2.34 g/cm³, significantly higher than alkali metals but lower than most transition metals.")
+    
+    # Isotopes of Boron
+    st.subheader("🧪 Isotopes of Boron")
+    st.write("Boron has two naturally occurring isotopes: B-10 (19.9%) and B-11 (80.1%). B-10 is used in nuclear reactors and radiation shielding due to its neutron absorption properties.")
+    
+    # Crystal Structure
+    st.subheader("💎 Crystal Structure")
+    st.write("Boron has a complex crystalline structure, often existing in allotropes like α-rhombohedral and β-rhombohedral forms, which contribute to its high hardness and brittleness.")
 
     st.caption("Data Source: [WebElements Periodic Table](https://www.webelements.com/boron/atoms.html)")
 
