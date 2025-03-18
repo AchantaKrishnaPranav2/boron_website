@@ -135,7 +135,64 @@ if a == ":red[B]  🔥 Boron":
                       font_color="white")
 
     st.plotly_chart(fig)
-
+    # ✅ **1️⃣ Interactive Emission Spectrum using Plotly**
+    st.subheader("🔬 Interactive Emission Spectrum")
+    
+    # Emission spectrum data
+    spectra_data = {
+        "Wavelength (nm)": [249.77, 345.10, 412.12, 455.35, 520.56],  
+        "Intensity": [100, 80, 60, 50, 40]  
+    }
+    
+    df_spectra = pd.DataFrame(spectra_data)
+    
+    fig = px.bar(df_spectra, x="Wavelength (nm)", y="Intensity", 
+                 text="Wavelength (nm)", color="Intensity",
+                 color_continuous_scale="plasma")
+    
+    fig.update_traces(textfont_size=12, textposition="outside")
+    
+    fig.update_layout(title="Boron Emission Spectrum",
+                      xaxis_title="Wavelength (nm)",
+                      yaxis_title="Relative Intensity",
+                      plot_bgcolor="black",
+                      paper_bgcolor="black",
+                      font_color="white")
+    
+    st.plotly_chart(fig, use_container_width=True)
+    
+    # ✅ **2️⃣ Simulated Spectral Gradient using CSS & HTML**
+    st.subheader("🌈 Simulated Boron Emission Spectrum")
+    
+    html_code = """
+    <style>
+    .spectrum-bar {
+        width: 100%;
+        height: 50px;
+        background: linear-gradient(to right, 
+            black 0%, violet 10%, blue 20%, cyan 30%, 
+            green 40%, yellow 50%, orange 60%, red 70%, black 100%);
+        border-radius: 5px;
+    }
+    </style>
+    <div class="spectrum-bar"></div>
+    """
+    
+    st.markdown(html_code, unsafe_allow_html=True)
+    
+    # ✅ **3️⃣ Emission Spectrum Table**
+    st.subheader("📊 Emission Line Data for Boron")
+    
+    df_table = pd.DataFrame({
+        "Wavelength (nm)": [249.77, 345.10, 412.12, 455.35, 520.56],
+        "Emission Type": ["B I", "B II", "B III", "B IV", "B V"],
+        "Relative Intensity": ["Strong", "Medium", "Weak", "Weak", "Very Weak"]
+    })
+    
+    st.dataframe(df_table, use_container_width=True)
+    
+    
+    
     st.divider()
 
     # ----------------------------------------
