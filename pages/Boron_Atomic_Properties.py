@@ -85,7 +85,7 @@ st.caption("Data Source: [NIST Physical Measurement Laboratory](https://physics.
 
 # Displaying Emission Spectrum Image
 st.image("https://www.nist.gov/sites/default/files/styles/960_x_960_limit/public/images/2020/04/20/boron_spectrum.png", 
-         caption="Emission Spectrum of Boron", use_column_width=True)  # FIXED: Added use_container_width=True
+         caption="Emission Spectrum of Boron", use_container_width=True)  # FIXED: Added use_container_width=True
 
 st.divider()
 
