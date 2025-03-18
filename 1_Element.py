@@ -259,63 +259,21 @@ elif a == ":violet[K]  ✨ Potassium":
     col1.write("Potassium compounds such as potash (K₂CO₃) were used in glassmaking, soap production, and fertilizers long before the element was purified. Today, potassium remains essential in industries, agriculture, and biological systems.")
     
     st.divider()
-else:
-    import numpy as np
-    import matplotlib.pyplot as plt
-    import matplotlib.animation as animation
-    import streamlit as st
-    from PIL import Image
-    
-    # Function to create the animation
-    def create_loading_gif():
-        fig, ax = plt.subplots(figsize=(4, 4))
-        ax.set_xlim(-2, 2)
-        ax.set_ylim(-2, 2)
-        ax.set_xticks([])
-        ax.set_yticks([])
-        ax.set_facecolor("#0e1117")  # Dark theme background
-        ax.spines["top"].set_visible(False)
-        ax.spines["right"].set_visible(False)
-        ax.spines["left"].set_color("white")
-        ax.spines["bottom"].set_color("white")
-    
-        nucleus = plt.Circle((0, 0), 0.2, color="#5cde1f", alpha=0.8)  # Boron nucleus
-        ax.add_patch(nucleus)
-    
-        electron_paths = [plt.plot([], [], "o", markersize=6, color="#ffcc00")[0] for _ in range(3)]
-        radii = [0.6, 1.0, 1.4]  # Different orbits
-    
-        def update(frame):
-            for i, electron in enumerate(electron_paths):
-                angle = 2 * np.pi * (frame / 60) + (i * np.pi / 3)
-                x = np.array([radii[i] * np.cos(angle)])  # Ensure x is a sequence
-                y = np.array([radii[i] * np.sin(angle)])  # Ensure y is a sequence
-                electron.set_data(x, y)
-            return electron_paths
 
-    
-        ani = animation.FuncAnimation(fig, update, frames=60, interval=50, blit=True)
-        ani.save("boron_loading.gif", writer="pillow", fps=30)  # Save animation as GIF
-        plt.close()
-    
-    # Create GIF if not already created
-    create_loading_gif()
-    
-    # Streamlit app
-    st.title("🔬 Boron Element Dashboard")
-    
-    # Dropdown menu for selection
-    option = st.selectbox("Select a property:", ["", "Atomic Radius", "Electronegativity", "Crystal Structure", "Decay Simulation"])
-    
-    # Display content based on selection
-    if option == "Atomic Radius":
-        st.write("Boron has a small atomic radius of 85 pm.")
-    elif option == "Electronegativity":
-        st.write("Boron has an electronegativity of 2.04.")
-    elif option == "Crystal Structure":
-        st.write("Boron crystallizes in a complex rhombohedral structure.")
-    elif option == "Decay Simulation":
-        st.write("Boron-10 is stable, while Boron-8 undergoes rapid decay.")
-    else:
-        # Display loading GIF when no selection is made
-        st.image("boron_loading.gif", caption="Awaiting Selection...", use_column_width=True)
+else:
+    st.markdown("""
+    ### 📚 Project Submission
+    ---
+    **Course:** [Your Course Name]  
+    **Professor:** [Professor's Name]  
+    **Group Name:** [Your Group Name]  
+
+    **👥 Team Members:**  
+    - [Member 1 Name]  
+    - [Member 2 Name]  
+    - [Member 3 Name]  
+    """)
+
+    # Optional: Add a success message or a separator
+    st.success("Submission completed successfully!")
+    st.divider()  # Adds a horizontal line
