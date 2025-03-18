@@ -159,7 +159,18 @@ if a == ":red[B]  🔥 Boron":
     col2.image("https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Gaylussac.jpg/338px-Gaylussac.jpg", caption="Joseph Louis Gay-Lussac",width = 200)
     col3.image("https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Louis_Jacques_Th%C3%A9nard.jpg/330px-Louis_Jacques_Th%C3%A9nard.jpg", caption="Louis Jacques Thénard",width = 200)
     
-    st.write("Boron was not recognized as an element until it was isolated by Sir Humphry Davy[12] and by Joseph Louis Gay-Lussac and Louis Jacques Thénard.[11] In 1808 Davy observed that electric current sent through a solution of borates produced a brown precipitate on one of the electrodes. In his subsequent experiments, he used potassium to reduce boric acid instead of electrolysis. He produced enough boron to confirm a new element and named it boracium.[12] Gay-Lussac and Thénard used iron to reduce boric acid at high temperatures. By oxidizing boron with air, they showed that boric acid is its oxidation product.[11][20] Jöns Jacob Berzelius identified it as an element in 1824.[21] Pure boron was arguably first produced by the American chemist Ezekiel Weintraub in 1909.")
+    st.write("Boron was not recognized as an element until it was isolated by Sir Humphry Davy and by Joseph Louis Gay-Lussac and Louis Jacques Thénard. ")
+    st.write("In 1808 Davy observed that electric current sent through a solution of borates produced a brown precipitate on one of the electrodes.  ")
+    st.write("In his subsequent experiments, he used potassium to reduce boric acid instead of electrolysis. ")
+    st.write("He produced enough boron to confirm a new element and named it boracium. ")
+    st.write("Gay-Lussac and Thénard used iron to reduce boric acid at high temperatures. ")
+    st.write("By oxidizing boron with air, they showed that boric acid is its oxidation product. ")
+    st.divider
+    st.write("Jöns Jacob Berzelius identified it as an element in 1824. ")
+    
+    st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/J%C3%B6ns_Jacob_Berzelius_x_Johan_Way.jpg/330px-J%C3%B6ns_Jacob_Berzelius_x_Johan_Way.jpg",caption = "Jöns Jacob Berzelius")
+    st.divider()
+    st.write("Pure boron was arguably first produced by the American chemist Ezekiel Weintraub in 1909.")
 
     st.divider()
     st.markdown("🚀 **Explore More:** [Wikipedia - Boron](https://en.wikipedia.org/wiki/Boron)")
