@@ -151,3 +151,88 @@ if a == ":red[B]  🔥 Boron":
     st.divider()
 
     st.markdown("🚀 **Explore More:** [Wikipedia - Boron](https://en.wikipedia.org/wiki/Boron)")
+else:
+
+    st.markdown("<h1 style='color:#ffffff;'>🧪 Potassium: A Reactive Alkali Metal</h1>", unsafe_allow_html=True)
+    st.sidebar.success("Select a page")
+    
+    col1, col2 = st.columns([1.2, 2])
+    col1.image("https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Potassium.JPG/255px-Potassium.JPG")
+    col2.markdown(
+        """
+        <style>
+        .big-font {
+            font-size: 16px !important;
+            font-weight: ;
+            color: white;
+        }
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
+    col2.markdown('<p class="big-font">Potassium (K) is a highly reactive alkali metal in Group 1 of the periodic table. It is soft, silvery-white, and easily oxidizes in air.</p>', unsafe_allow_html=True)
+    col2.markdown('<p class="big-font">It is an essential element for life, playing a vital role in nerve function, muscle contraction, and fluid balance in organisms.</p>', unsafe_allow_html=True)
+    
+    col1, col2 = st.columns([1,1])
+    col1.info("**Atomic number - 19**")
+    col1.info("**Atomic mass - 39.098**")
+    col1.info("**Group - 1 (Alkali metals)**")
+    col2.info("**Number of protons - 19**")
+    col2.info("**Number of neutrons - 20**")
+    col2.info("**Period - 4**")
+    
+    st.divider()
+    st.header("atom animation")
+    st.image("https://i.pinimg.com/originals/5b/96/74/5b96749cd559ef4732536d19f648a732.gif",caption="potassium atom animation")
+    st.header("📋 Physical Properties")
+    st.info("Soft, silvery-white metal that reacts violently with water, producing hydrogen gas and heat.")
+    
+    col1, col2, col3 = st.columns(3)
+    col1.metric(label="Phase at STP", value="Solid")
+    col2.metric(label="Melting point", value="336.7 K")
+    col3.metric(label="Boiling point", value="1032 K")
+    
+    col1, col2, col3 = st.columns(3)
+    col1.metric(label="Density", value="0.862 g/cm³")
+    col2.metric(label="Heat of fusion", value="2.33 kJ/mol")
+    col3.metric(label="Heat of vaporization", value="76.9 kJ/mol")
+    
+    st.write("  ")
+    
+    # Plotting Potassium Vapor Pressure
+    Temp = np.array([300, 400, 500, 600, 700, 800])
+    pressure = np.array([0.01, 0.1, 1, 10, 100, 1000])
+    plt.style.use("seaborn-v0_8-dark")
+    fig, ax = plt.subplots(figsize=(7, 4), facecolor="#0e1117")
+    ax.plot(Temp, pressure,  '.-', color="#e81753", linewidth=2, marker="o", markersize=4, markerfacecolor="white", markeredgecolor="#5cde1f", alpha=0.8)
+    
+    ax.set_facecolor("#0e1117")  # Dark background
+    ax.spines["top"].set_visible(False)
+    ax.spines["right"].set_visible(False)
+    ax.spines["left"].set_color("white")
+    ax.spines["bottom"].set_color("white")
+    
+    ax.xaxis.label.set_color("white")  # X label color
+    ax.yaxis.label.set_color("white")  # Y label color
+    ax.tick_params(axis="x", colors="white")  # X ticks color
+    ax.tick_params(axis="y", colors="white")  # Y ticks color
+    
+    ax.grid(color="gray", linestyle="--", linewidth=0.5, alpha=0.5)
+    
+    ax.set_title(f"Vapour Pressure Variation with Temperature", fontsize=14, fontweight="bold", color="white")
+    ax.set_xlabel(f"Temperature (in K)", fontsize=12, fontweight="bold")
+    ax.set_ylabel("Pressure (in Pa)", fontsize=12, fontweight="bold")
+    st.pyplot(fig)
+    
+    st.divider()
+    
+    st.markdown("<h1 style='color:#ffffff;'>🪶 History</h1>", unsafe_allow_html=True)
+    st.info("Potassium was discovered in 1807 by **Humphry Davy**, using electrolysis on potash.")
+    
+    col1, col2 = st.columns([2, 1])
+    col2.image("https://cdn.britannica.com/96/12396-050-A1110D81/Humphry-Davy-Thomas-Lawrence-detail-oil-painting.jpg?w=300", caption = "Sir Humphry Davy, discoverer of potassium.")
+    col1.write("Potassium was first isolated by Sir Humphry Davy in 1807 through the electrolysis of molten potassium hydroxide (KOH). ")
+    col1.write("It was the first metal to be isolated using electrolysis, and this technique later led to the discovery of other alkali and alkaline earth metals, including sodium and calcium.")
+    col1.write("Potassium compounds such as potash (K₂CO₃) were used in glassmaking, soap production, and fertilizers long before the element was purified. Today, potassium remains essential in industries, agriculture, and biological systems.")
+    
+    st.divider()
