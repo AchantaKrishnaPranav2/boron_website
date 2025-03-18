@@ -5,26 +5,85 @@ import matplotlib.pyplot as plt
 st.set_page_config(
     page_title="Boron Properties",
     page_icon="🧪",
+    layout="wide"
 )
 
 # Radio button selection
-a = st.radio("Choose", [":red[B]  :fire:", ":violet[K]  :sparkles:"], captions=["Boron", "Potassium"], index=None)
-
-# Display sidebar content only when Boron is selected
-if a == ":red[B]  :fire:":
-    st.sidebar.success("Select a page above.")
+a = st.radio(
+    "Choose an element to explore:",
+    [":red[B]  🔥 Boron", ":violet[K]  ✨ Potassium"],
+    index=None
+)
     
+# Main content
+if a == ":red[B]  🔥 Boron":
+    st.markdown("# **Welcome to the World of Boron** 🧪")
+    st.write("Explore the fascinating properties, occurrence, and uses of Boron.")
+
+    # Boron Origin - Using Expander for interactivity
+    with st.expander("🌌 **Origin and Occurrence of Boron**"):
+        st.markdown(
+            """
+            Boron is synthesized entirely through **cosmic ray spallation and supernovas**,  
+            unlike most elements that form through **stellar nucleosynthesis**.  
+            As a result, **it is a low-abundance element** in both the **Solar System** and Earth's crust.
+            """
+        )
+        st.info("🔍 **Did you know?** Boron makes up only **0.001%** of Earth's crust!")
+
+    # Industrial Deposits & Extraction
+    with st.expander("🏭 **Industrial Deposits & Extraction**"):
+        st.write(
+            """
+            **Boron is concentrated in borate minerals** due to their **water-solubility**.  
+            These are found in evaporite deposits, with **Turkey** being the **largest producer**  
+            of boron minerals such as **borax and kernite**.
+            """
+        )
+        st.success("✅ **Fact**: Turkey holds nearly **70% of the world’s boron reserves**!")
+
+    # Elemental Boron Occurrence
+    with st.expander("☄️ **Elemental Boron in Nature**"):
+        st.write(
+            """
+            **Pure boron is not naturally found on Earth** as it readily forms compounds.  
+            However, **small amounts** have been detected in **meteoroids**.
+            """
+        )
+        st.warning("⚠️ **Rarity Alert**: Unlike carbon, elemental boron is extremely rare in nature!")
+
+    # Boron Allotropes
+    with st.expander("🧪 **Allotropes of Boron**"):
+        col1, col2 = st.columns(2)
+        col1.image("https://upload.wikimedia.org/wikipedia/commons/6/6f/Boron.jpg", caption="Crystalline Boron", width=300)
+        col2.markdown(
+            """
+            Boron exists in **two primary allotropes**:  
+            - **Amorphous Boron**: Brown powder.  
+            - **Crystalline Boron**: **Silvery-black**, **extremely hard** (9.3 on the Mohs scale),  
+              and a **poor electrical conductor** at room temperature (1.5 × 10⁻⁶ Ω⁻¹ cm⁻¹).
+            """
+        )
+        st.info("💡 **Interesting Fact**: Boron’s hardness is **comparable to diamonds**!")
+
+    # Uses of Boron
+    with st.expander("🔬 **Applications of Boron**"):
+        st.write(
+            """
+            The **primary application** of boron is in **boron filaments**,  
+            which have **high-strength properties** similar to **carbon fibers**.
+            """
+        )
+        st.success("🔧 **Boron’s Role**: Used in aerospace, bulletproof vests, and composite materials!")
+
+
     st.markdown("# Welcome to Boron Properties")
     
-    st.write("""
-    This website provides detailed insights into Boron’s properties, isotopes, atomic structure, and applications.  
-    Use the sidebar to navigate through different sections.
-    """)
 
     st.markdown("<h1 style='color:#ffffff;'>🧪 Boron: A Unique Metalloid</h1>", unsafe_allow_html=True)
     
     col1, col2 = st.columns([1.2, 2])
-    col1.image("https://upload.wikimedia.org/wikipedia/commons/1/19/Boron_R105.jpg")
+    col1.image("https://upload.wikimedia.org/wikipedia/commons/1/19/Boron_R105.jpg",caption = "boron (β-rhombohedral)")
     col2.markdown(
         '''
         <style>
