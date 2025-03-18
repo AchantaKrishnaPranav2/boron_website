@@ -81,10 +81,7 @@ elif a == ":violet[K]  ✨ Potassium":
     import plotly.graph_objects as go
     import numpy as np
     
-    st.set_page_config(
-        page_title="Potassium - Structure",
-        page_icon="🧩",
-    )
+    
     
     st.title("🧩 Potassium - Structure")
     st.info("Potassium is an alkali metal that crystallizes in a **body-centered cubic (BCC)** structure under standard conditions. Its atomic structure influences its electrical conductivity, malleability, and chemical reactivity.")
