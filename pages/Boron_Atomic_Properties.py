@@ -6,6 +6,8 @@ import pandas as pd
 st.set_page_config(page_title="Boron - Atomic Properties", page_icon="🔬")
 
 st.title("🔬 Boron - Atomic Properties")
+st.image("https://media3.giphy.com/media/Kg1ttGFEuMc9QvuYVa/giphy.gif")
+
 
 # ----------------------------------------
 # 🔹 Basic Atomic Properties
