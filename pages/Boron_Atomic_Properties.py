@@ -172,7 +172,8 @@ if a == ":red[B]  🔥 Boron":
     
     
 elif a == ":violet[K]  ✨ Potassium":
-   st.title("🔬 Potassium - Atomic Properties")
+    
+    st.title("🔬 Potassium - Atomic Properties")
 
     # Atomic properties
     col1, col2, col3 = st.columns(3)
