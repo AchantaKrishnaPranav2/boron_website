@@ -1,42 +1,5 @@
 import streamlit as st
 import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
-st.set_page_config(
-        page_title="Boron Properties",
-        page_icon="🧪",
-    )
-a = st.radio("Choose", [":red[B]  :fire:", ":violet[K]  :sparkles:"], captions=["Boron", "Potassium"], index=None)
-if a == ":red[B]  :fire:":
-    
-    
-    
-    st.markdown("# Welcome to Boron Properties")
-    st.sidebar.success("Select a page above.")
-    
-    st.write("""
-    This website provides detailed insights into Boron’s properties, isotopes, atomic structure, and applications.  
-    Use the sidebar to navigate through different sections.
-    """)
-    st.markdown("<h1 style='color:#ffffff;'>🧪 Boron: A Unique Metalloid</h1>", unsafe_allow_html=True)
-    st.sidebar.success("Select a page")
-    
-    col1, col2 = st.columns([1.2, 2])
-    col1.image("https://upload.wikimedia.org/wikipedia/commons/6/6f/Boron.jpg")
-    col2.markdown(
-        '''
-        <style>
-        .big-font {
-            font-size: 16px !important;
-            color: white;
-        }
-        </style>
-        ''',
-        unsafe_allow_html=True
-    )
-    col2.markdown('<p class="big-font">Boron (B) is a metalloid in Group 13 of the periodic table. It has properties of both metals and non-metals.</p>', unsafe_allow_html=True)
-import streamlit as st
-import numpy as np
 import matplotlib.pyplot as plt
 
 st.set_page_config(
