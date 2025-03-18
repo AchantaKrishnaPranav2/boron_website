@@ -72,7 +72,7 @@ st.subheader("🌈 Atomic Spectra")
 st.write("""
 Boron’s atomic spectrum features strong lines in the ultraviolet (UV) and visible regions. These spectral lines are crucial in various applications, including spectroscopy and materials science.
 """)
-st.image("https://physics.nist.gov/PhysRefData/ASD/lines_form.html", caption="Emission Spectrum of Boron", use_column_width=True)
+st.image("https://physics.nist.gov/PhysRefData/ASD/lines_form.html", caption="Emission Spectrum of Boron", use_container_width=True)
 
 st.divider()
 
