@@ -169,9 +169,7 @@ if a == ":red[B]  🔥 Boron":
     
     st.dataframe(df_table, use_container_width=True)
     
-    # ✅ **4️⃣ Original Image from NIST**
-    st.image("https://www.nist.gov/sites/default/files/styles/960_x_960_limit/public/images/2020/04/20/boron_spectrum.png", 
-             caption="Emission Spectrum of Boron", use_container_width=True)
+    
     
     st.divider()
 
