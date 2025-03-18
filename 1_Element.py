@@ -261,10 +261,7 @@ elif a == ":violet[K]  ✨ Potassium":
     st.divider()
 
 else:
-    
-
-
-
+   
     st.markdown("""
     ### 📚 Project Submission
     ---
