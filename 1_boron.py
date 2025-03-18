@@ -35,36 +35,50 @@ if a == ":red[B]  🔥 Boron":
     with st.expander("🏭 **Industrial Deposits & Extraction**"):
         st.write(
             """
-            **Boron is concentrated in borate minerals** due to their **water-solubility**.  
-            These are found in evaporite deposits, with **Turkey** being the **largest producer**  
-            of boron minerals such as **borax and kernite**.
+            While **β-rhombohedral boron is the most stable**,  
+            the transformation of other phases at **room temperature is negligible**.  
+            As a result, all **five key crystalline phases** can exist under normal conditions.
             """
         )
-        st.success("✅ **Fact**: Turkey holds nearly **70% of the world’s boron reserves**!")
+        st.success("✅ **Key Takeaway:** Even metastable boron phases remain unchanged at room temperature!")
+
 
     # Elemental Boron Occurrence
     with st.expander("☄️ **Elemental Boron in Nature**"):
         st.write(
             """
-            **Pure boron is not naturally found on Earth** as it readily forms compounds.  
-            However, **small amounts** have been detected in **meteoroids**.
+            **Polycrystalline β-rhombohedral boron** is the most common form found.  
+            - It is **extremely hard** and **lightweight** (about **10% lighter than aluminum**).  
+            - It has a **high melting point of 2080°C**, surpassing steel.
+            
+            **Amorphous Boron Powder** is another prevalent form.
             """
         )
-        st.warning("⚠️ **Rarity Alert**: Unlike carbon, elemental boron is extremely rare in nature!")
+        st.info("🔥 **Fun Fact:** β-rhombohedral boron is one of the hardest materials known, competing with diamonds in hardness!")
 
     # Boron Allotropes
     with st.expander("🧪 **Allotropes of Boron**"):
-        col1, col2 = st.columns(2)
-        col1.image("https://upload.wikimedia.org/wikipedia/commons/6/6f/Boron.jpg", caption="Crystalline Boron", width=300)
-        col2.markdown(
+        st.write(
             """
-            Boron exists in **two primary allotropes**:  
-            - **Amorphous Boron**: Brown powder.  
-            - **Crystalline Boron**: **Silvery-black**, **extremely hard** (9.3 on the Mohs scale),  
-              and a **poor electrical conductor** at room temperature (1.5 × 10⁻⁶ Ω⁻¹ cm⁻¹).
+            **Boron exists in multiple crystalline and amorphous forms.**  
+            The well-known crystalline forms include:
+            - **α-Rhombohedral (α-R)**
+            - **β-Rhombohedral (β-R) (Most Stable)**
+            - **β-Tetragonal (β-T)**  
+            
+            Under special conditions, boron can also be synthesized in:
+            - **α-Tetragonal (α-T)**
+            - **γ-Orthorhombic (γ)**
+            
+            🔹 **Amorphous Forms:**  
+            - **Fine Powder**  
+            - **Glassy Solid**
+            
+            📌 Although at least **14 additional allotropes** have been reported, many lack experimental confirmation or contain impurity-stabilized structures.
             """
         )
-        st.info("💡 **Interesting Fact**: Boron’s hardness is **comparable to diamonds**!")
+        st.warning("⚠️ **β-Rhombohedral is the most stable form, but other phases can also exist at room temperature!**")
+
 
     # Uses of Boron
     with st.expander("🔬 **Applications of Boron**"):
