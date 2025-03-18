@@ -114,30 +114,8 @@ if a == ":red[B]  🔥 Boron":
     - **B I** at **249.77 nm**
     """)
 
-    # Interactive Emission Spectrum
-    spectra_data = {
-        "Wavelength (nm)": [249.77, 345.10, 412.12, 455.35, 520.56],
-        "Intensity": [100, 80, 60, 50, 40]
-    }
-
-    df_spectra = pd.DataFrame(spectra_data)
-
-    fig = px.bar(df_spectra, x="Wavelength (nm)", y="Intensity", 
-                 text="Wavelength (nm)", color="Intensity",
-                 color_continuous_scale="plasma")
-
-    fig.update_traces(textfont_size=12, textposition="outside")
-    fig.update_layout(title="Boron Emission Spectrum",
-                      xaxis_title="Wavelength (nm)",
-                      yaxis_title="Relative Intensity",
-                      plot_bgcolor="black",
-                      paper_bgcolor="black",
-                      font_color="white")
-
-    st.plotly_chart(fig)
-    # ✅ **1️⃣ Interactive Emission Spectrum using Plotly**
     st.subheader("🔬 Interactive Emission Spectrum")
-    
+
     # Emission spectrum data
     spectra_data = {
         "Wavelength (nm)": [249.77, 345.10, 412.12, 455.35, 520.56],  
@@ -191,9 +169,13 @@ if a == ":red[B]  🔥 Boron":
     
     st.dataframe(df_table, use_container_width=True)
     
-    
+    # ✅ **4️⃣ Original Image from NIST**
+    st.image("https://www.nist.gov/sites/default/files/styles/960_x_960_limit/public/images/2020/04/20/boron_spectrum.png", 
+             caption="Emission Spectrum of Boron", use_container_width=True)
     
     st.divider()
+
+
 
     # ----------------------------------------
     # 🧲 Electron Affinity
