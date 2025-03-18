@@ -151,7 +151,7 @@ if a == ":red[B]  🔥 Boron":
     st.divider()
 
     st.markdown("🚀 **Explore More:** [Wikipedia - Boron](https://en.wikipedia.org/wiki/Boron)")
-else:
+elif a == ":violet[K]  ✨ Potassium":
 
     st.markdown("<h1 style='color:#ffffff;'>🧪 Potassium: A Reactive Alkali Metal</h1>", unsafe_allow_html=True)
     st.sidebar.success("Select a page")
