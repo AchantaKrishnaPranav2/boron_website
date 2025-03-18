@@ -24,7 +24,7 @@ if a == ":red[B]  :fire:":
     st.markdown("<h1 style='color:#ffffff;'>🧪 Boron: A Unique Metalloid</h1>", unsafe_allow_html=True)
     
     col1, col2 = st.columns([1.2, 2])
-    col1.image("https://upload.wikimedia.org/wikipedia/commons/6/6f/Boron.jpg")
+    col1.image("https://upload.wikimedia.org/wikipedia/commons/1/19/Boron_R105.jpg")
     col2.markdown(
         '''
         <style>
