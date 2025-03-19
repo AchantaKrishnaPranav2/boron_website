@@ -352,7 +352,7 @@ elif a == ":orange[Kr] 🍀 Krypton" :
     
     # Display results
     st.write(f"### 📌 Krypton Solubility at {temperature} K and {pressure} bar:")
-    st.success(f"{solubility:.5e} mol/kg**")
+    st.success(f"{solubility:.5e} mol/kg")
     
     # Explanation
     st.info("This calculation follows Henry's Law, adjusting for temperature using the van 't Hoff equation.")
