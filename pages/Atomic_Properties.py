@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 st.set_page_config(page_title="Boron - Atomic Properties", page_icon="🔬")
 a = st.radio(
     "Choose an element to explore:",
-    [":red[B]  🔥 Boron", ":violet[K]  ✨ Potassium"],
+    [":red[B]  🔥 Boron", ":violet[K]  ✨ Potassium",  ":orange[Kr] 🍀 Krypton"],
     index=None)
 if a == ":red[B]  🔥 Boron":
     st.title("🔬 Boron - Atomic Properties")
@@ -358,3 +358,71 @@ elif a == ":violet[K]  ✨ Potassium":
     # Crystal Structure
     st.subheader("💎 Crystal Structure")
     st.write("Potassium crystallizes in a body-centered cubic (BCC) structure, contributing to its malleability and softness.")
+
+elif a == ":orange[Kr] 🍀 Krypton" :
+    st.title("🔬 Krypton - Atomic Properties")
+
+    col1, col2, col3 = st.columns(3)
+    col1.metric(label="Atomic Radius", value="88 pm")
+    col2.metric(label="Covalent Radius", value="116 pm")
+    col3.metric(label="Vanderwaals radius", value="202 pm")
+    
+    col1, col2, col3 = st.columns(3)
+    col1.metric(label="Oxidation states", value="+2, +1")
+    col2.metric(label="Electronegativity", value="3.00 ")
+    col3.write("  ")
+    
+    # Force reload to refresh the animati
+    
+    st.divider()
+    
+    st.subheader("⚙️ Electronic configuration")
+    st.latex("1s² 2s² 2p⁶ 3s² 3p⁶ 4s² 3d¹⁰ 4p⁶")
+    
+    st.write("Krypton belongs to Group 18 (Noble Gases), its outermost shell (4p⁶) is completely filled, making it chemically inert. The filled p-orbital gives Krypton high stability, as it does not readily gain or lose electrons.")
+    st.write("Krypton’s stable electronic configuration also explains its high ionization energy and low chemical reactivity. However, under extreme conditions, Krypton can form compounds like KrF₂ (Krypton Difluoride), where it donates electrons to highly electronegative fluorine.")
+    orbitals = ["1s", "2s", "2p", "3s", "3p", "4s", "3d", "4p"]
+    electrons = [2, 2, 6, 2, 6, 2, 10, 6]
+    
+    # Create figure
+    fig, ax = plt.subplots(figsize=(8, 4))
+    ax.barh(orbitals, electrons, color="#5cde1f")
+    ax.set_xlabel("Electrons", fontsize=12, color="white")
+    ax.set_ylabel("Orbitals", fontsize=12, color="white")
+    ax.set_title("Orbital Filling Diagram", fontsize=14, color="white")
+    ax.set_xlim(0, 10)
+    
+    # Dark theme
+    fig.patch.set_facecolor("#0e1117")
+    ax.set_facecolor("#0e1117")
+    ax.tick_params(axis="both", colors="white")
+    
+    st.pyplot(fig)
+    
+    st.divider()
+    
+    st.subheader("⚡Ionization Energy")
+    st.write("Ionization energy is the energy required to remove an electron from a neutral atom in the gaseous state. Krypton, being a noble gas, has a high ionization energy due to its stable electron configuration (full outer shell). Each additional electron removed requires significantly more energy because the atom becomes more positively charged.")
+    ionization_data = {
+        "Ionization Step": ["1st", "2nd", "3rd", "4th", "5th"],
+        "Energy (kJ/mol)": [1350.8, 2350.4, 3565, 5070, 6240]
+    }
+    
+    df_ionization = pd.DataFrame(ionization_data)
+    
+    fig = px.bar(df_ionization, x="Ionization Step", y="Energy (kJ/mol)", 
+                 text="Energy (kJ/mol)", color="Energy (kJ/mol)", 
+                 color_continuous_scale="viridis", height=400)
+    
+    fig.update_traces(textfont_size=12, textposition="outside")
+    fig.update_layout(plot_bgcolor="#0e1117", paper_bgcolor="#0e1117", font_color="white")
+    
+    st.plotly_chart(fig, use_container_width=True)
+    
+    st.divider()
+    st.subheader("🌈 Atomic Spectra")
+    st.write("Krypton exhibits a complex atomic spectrum due to its multiple electronic transitions. Like other noble gases, it emits distinct spectral lines when excited electrons return to lower energy levels. Krypton's spectrum primarily features sharp emission lines in the visible, ultraviolet (UV), and infrared (IR) regions, making it valuable for scientific and technological applications.")
+    st.write("One of Krypton’s most notable spectral lines is the 605.78 nm (orange-red) emission from the krypton-86 isotope, which was historically used to define the meter in 1960. Additionally, krypton emits blue, green, and yellow spectral lines when ionized, contributing to its use in high-intensity gas discharge lamps and lasers.")
+    st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/36_%28Kr_I%29_NIST_ASD_emission_spectrum.png/1920px-36_%28Kr_I%29_NIST_ASD_emission_spectrum.png", use_container_width=True)
+    
+    st.divider()
