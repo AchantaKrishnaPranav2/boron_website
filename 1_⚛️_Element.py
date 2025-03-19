@@ -329,7 +329,38 @@ elif a == ":orange[Kr] 🍀 Krypton" :
     ax.set_xlabel(f"Temperature (in K)", fontsize=12, fontweight="bold")
     ax.set_ylabel("Pressure (in Pa)", fontsize=12, fontweight="bold")
     st.pyplot(fig)
+
+    # Set up the Streamlit app
+    st.set_page_config(page_title="Krypton Solubility Calculator", page_icon="🫧")
     
+    st.title("🫧 Krypton Solubility in Water")
+    st.subheader("Using Henry's Law")
+    
+    # Constants
+    KH_298 = 2.5e-3  # Henry's constant at 298.15 K (mol/kg·bar)
+    T_REF = 298.15  # Reference temperature (K)
+    D_LN_KH_D_INV_T = 1900  # Temperature dependence constant (K)
+    
+    # User inputs
+    pressure = st.number_input("Enter Krypton Partial Pressure (bar)", min_value=0.0, value=1.0)
+    temperature = st.number_input("Enter Temperature (K)", min_value=250.0, max_value=400.0, value=298.15)
+    
+    # Adjust Henry's constant for temperature
+    KH_T = KH_298 * np.exp(D_LN_KH_D_INV_T * (1/T_REF - 1/temperature))
+    
+    # Calculate solubility
+    solubility = KH_T * pressure  # mol/kg
+    
+    # Display results
+    st.write(f"### 📌 Krypton Solubility at {temperature} K and {pressure} bar:")
+    st.success(f"{solubility:.5e} mol/kg**")
+    
+    # Explanation
+    st.info("This calculation follows Henry's Law, adjusting for temperature using the van 't Hoff equation.")
+    
+    st.divider()
+    st.caption("📊 Data source: NIST Chemistry WebBook | Henry's Law Constants")
+        
     st.divider()
     
     st.markdown("<h1 style='color:#ffffff;'>🪶History</h1>", unsafe_allow_html=True)
