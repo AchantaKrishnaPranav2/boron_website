@@ -341,9 +341,9 @@ elif a == ":orange[Kr] 🍀 Krypton" :
     D_LN_KH_D_INV_T = 1900  # Temperature dependence constant (K)
     
     # User inputs
-    pressure = st.number_input("Enter Krypton Partial Pressure (bar)", min_value=0.0, value=1.0)
-    temperature = st.number_input("Enter Temperature (K)", min_value=250.0, max_value=400.0, value=298.15)
-    
+    pressure = st.slider("Enter Krypton Partial Pressure (bar)", min_value=0.0, max_value=10.0, value=1.0, step=0.1)
+    temperature = st.slider("Enter Temperature (K)", min_value=250.0, max_value=400.0, value=298.15, step=0.1)
+
     # Adjust Henry's constant for temperature
     KH_T = KH_298 * np.exp(D_LN_KH_D_INV_T * (1/T_REF - 1/temperature))
     
@@ -356,8 +356,6 @@ elif a == ":orange[Kr] 🍀 Krypton" :
     
     # Explanation
     st.info("This calculation follows Henry's Law, adjusting for temperature using the van 't Hoff equation.")
-    
-    st.divider()
     st.caption("📊 Data source: NIST Chemistry WebBook | Henry's Law Constants")
         
     st.divider()
