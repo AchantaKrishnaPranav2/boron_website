@@ -1,5 +1,5 @@
 [theme]
-primaryColor="#eab308"
-backgroundColor="#0f172a"
-secondaryBackgroundColor="#1b263b"
-textColor="#facc15"
+primaryColor="#14b8a6"  # Teal (calm, modern)
+backgroundColor="#0a0f19"  # Deep Navy (dark and sleek)
+secondaryBackgroundColor="#1c2b3a"  # Muted Blue-Gray (subtle contrast)
+textColor="#e0e7ff"  # Soft Lavender-White (easy on the eyes)
