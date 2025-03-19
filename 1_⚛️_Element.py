@@ -331,7 +331,7 @@ elif a == ":orange[Kr] 🍀 Krypton" :
     st.pyplot(fig)
 
     # Set up the Streamlit app
-    
+        
     st.subheader("🫧 Krypton Solubility in Water")
     st.markdown("####Using Henry's Law")
     
