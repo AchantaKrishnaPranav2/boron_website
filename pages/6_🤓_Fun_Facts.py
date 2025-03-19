@@ -9,7 +9,7 @@ a = st.radio(
     [":red[B]  🔥 Boron", ":violet[K]  ✨ Potassium",  ":orange[Kr] 🍀 Krypton"],
     index=None)
 if a == ":red[B]  🔥 Boron":
-    st.title("🧪 Mind-Blowing Facts About Boron 🔥")
+    st.title("🧪 Mind-Blowing Facts About Boron")
     st.divider()
     
     # Facts list
