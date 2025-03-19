@@ -5,7 +5,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Set Streamlit page config
-st.set_page_config(page_title="Boron - Atomic Properties", page_icon="🔬")
+st.set_page_config(page_title="Atomic Properties", page_icon="🔬")
 a = st.radio(
     "Choose an element to explore:",
     [":red[B]  🔥 Boron", ":violet[K]  ✨ Potassium",  ":orange[Kr] 🍀 Krypton"],
