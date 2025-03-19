@@ -333,7 +333,7 @@ elif a == ":orange[Kr] 🍀 Krypton" :
     # Set up the Streamlit app
         
     st.subheader("🫧 Krypton Solubility in Water")
-    st.markdown("####Using Henry's Law")
+    st.markdown("#### Using Henry's Law")
     
     # Constants
     KH_298 = 2.5e-3  # Henry's constant at 298.15 K (mol/kg·bar)
