@@ -523,6 +523,23 @@ elif a == ":orange[Kr] 🍀 Krypton" :
     Cp_values = A + B * t + C * t**2 + D * t**3 + E / t**2
     H_values = A * t + (B * t**2) / 2 + (C * t**3) / 3 + (D * t**4) / 4 - E / t + F - H
     S_values = A * np.log(t) + B * t + (C * t**2) / 2 + (D * t**3) / 3 - E / (2 * t**2) + G
+
+
+    # Title
+    st.markdown("#### 📜 Shomate Equations ")
+    
+    st.latex(r"""
+    C_p^\circ = A + B \cdot t + C \cdot t^2 + D \cdot t^3 + \frac{E}{t^2}
+    """)
+    
+    st.latex(r"""
+    H^\circ - H^\circ_{298.15} = A \cdot t + \frac{B \cdot t^2}{2} + \frac{C \cdot t^3}{3} + \frac{D \cdot t^4}{4} - \frac{E}{t} + F - H
+    """)
+    
+    st.latex(r"""
+    S^\circ = A \ln t + B \cdot t + \frac{C \cdot t^2}{2} + \frac{D \cdot t^3}{3} - \frac{E}{2 \cdot t^2} + G
+    """)
+
     
     # Create two columns for side-by-side plots
     col1, col2 = st.columns(2)
