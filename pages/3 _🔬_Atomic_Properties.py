@@ -347,7 +347,7 @@ elif a == ":violet[K]  ✨ Potassium":
     
     
     col1, col2 = st.columns(2)
-    # 📌 Plot Cp vs Temperature
+    # 📌  Plot Cp vs Temperature
     col1.subheader("Cp vs T")
     fig = plt.figure(figsize=(7, 4))
     plt.plot(T_values, Cp_values, label="Heat Capacity (Cp)", color="red")
