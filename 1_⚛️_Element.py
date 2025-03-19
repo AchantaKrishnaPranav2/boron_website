@@ -354,13 +354,13 @@ else:
    
     st.markdown(""" ⚛️ Elemental Explorer
     --- 
-    **Course:** [Material Science for Chemical Engineers]  
-    **Professor:** [Dr. Giridhar Madras]   
+    **Course:** Material Science for Chemical Engineers  
+    **Professor:** Dr. Giridhar Madras   
 
     **👥 Team Members:**  
-    - [Achanta Krishna Pranav - CH23BTECH11005]  
-    - [G Mahidhar - CH23BTECH11019]  
-    - [S Haemanth Ruban - CH23BTECH11036 ]  
+    - Achanta Krishna Pranav - CH23BTECH11005  
+    - G Mahidhar - CH23BTECH11019
+    - S Haemanth Ruban - CH23BTECH11036 
     """)
 
     st.divider()  # Adds a horizontal line
