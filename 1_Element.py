@@ -352,19 +352,15 @@ elif a == ":orange[Kr] 🍀 Krypton" :
     st.divider()
 else:
    
-    st.markdown("""
-    ### 📚 Project Submission
-    ---
-    **Course:** [Your Course Name]  
-    **Professor:** [Professor's Name]  
-    **Group Name:** [Your Group Name]  
+    st.markdown(""" ⚛️ Elemental Explorer
+    --- 
+    **Course:** [Material Science for Chemical Engineers]  
+    **Professor:** [Dr. Giridhar Madras]   
 
     **👥 Team Members:**  
-    - [Member 1 Name]  
-    - [Member 2 Name]  
-    - [Member 3 Name]  
+    - [Achanta Krishna Pranav - CH23BTECH11005]  
+    - [G Mahidhar - CH23BTECH11019]  
+    - [S Haemanth Ruban - CH23BTECH11036 ]  
     """)
 
-    # Optional: Add a success message or a separator
-    st.success("Submission completed successfully!")
     st.divider()  # Adds a horizontal line
