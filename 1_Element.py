@@ -11,7 +11,7 @@ st.set_page_config(
 # Radio button selection
 a = st.radio(
     "Choose an element to explore:",
-    [":red[B]  🔥 Boron", ":violet[K]  ✨ Potassium"],
+    [":red[B]  🔥 Boron", ":violet[K]  ✨ Potassium",":green[Kr]   Krypton"]
     index=None
 )
 
@@ -259,7 +259,98 @@ elif a == ":violet[K]  ✨ Potassium":
     col1.write("Potassium compounds such as potash (K₂CO₃) were used in glassmaking, soap production, and fertilizers long before the element was purified. Today, potassium remains essential in industries, agriculture, and biological systems.")
     
     st.divider()
-
+elif a == ":green[Kr]   Krypton" :
+    st.markdown("<h1 style='color:#ffffff;'>⚛️ Krypton: A Noble Gas with Unique Uses</h1>", unsafe_allow_html=True)
+    st.sidebar.success("Select a page")
+    
+    col1, col2 = st.columns([1.2, 2])
+    col1.image("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBl-X2EGFdqnsw4Kcs96eaGfKLa9b3Q-22aA&s")
+    col2.markdown(
+        """
+        <style>
+        .big-font {
+            font-size: 16px !important;
+            font-weight: ;
+            color: white;
+        }
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
+    col2.markdown('<p class="big-font">krypton (Kr), chemical element, a rare gas of Group 18 (noble gases) of the periodic table, which forms relatively few chemical compounds. About three times heavier than air, krypton is colorless, odorless, tasteless, and monatomic.</p>', unsafe_allow_html=True)
+    col2.markdown('<p class="big-font">Although traces are present in meteorites and minerals, krypton is more plentiful in Earth’s atmosphere, which contains 1.14 parts per million by volume of krypton.</p>', unsafe_allow_html=True)
+    
+    col1, col2 = st.columns([1,1])
+    col1.info("**Atomic number - 36**")
+    col1.info("**Atomic mass - 83.798**")
+    col1.info("**Group - 18**")
+    col2.info("**Number of protons - 36**")
+    col2.info("**Number of neutrons - 48**")
+    col2.info("**Period - 4**")
+    
+    st.divider()
+    
+    st.header("📋Physical Properties")
+    st.info("Colorless gas, exhibiting a whitish glow in an electric field")
+    
+    
+    col1, col2, col3 = st.columns(3)
+    col1.metric(label="Phase at STP", value="gas")
+    col2.metric(label="Melting point", value="115.78 K")
+    col3.metric(label="Boiling point", value="119.93 K")
+    
+    col1, col2, col3 = st.columns(3)
+    col1.metric(label="Density", value="3.749 g/L")
+    col2.metric(label="Heat of fusion", value="1.64 KJ/mol ")
+    col3.metric(label="Heat of vaporization", value="9.08 KJ/mol")
+    
+    st.write("  ")
+    
+    Temp = np.array([59, 65, 74, 84, 99, 120])
+    pressure = np.array([1, 10, 100, 1e3, 1e4, 1e5])
+    plt.style.use("seaborn-v0_8-dark")
+    fig, ax = plt.subplots(figsize=(7, 4), facecolor="#0e1117")
+    ax.plot(Temp, pressure, 'o-', color="#e81753", linewidth=2, markersize=4, markerfacecolor="white", markeredgecolor="#5cde1f", alpha=0.8)
+    
+    ax.set_facecolor("#0e1117")  # Dark background
+    ax.spines["top"].set_visible(False)
+    ax.spines["right"].set_visible(False)
+    ax.spines["left"].set_color("white")
+    ax.spines["bottom"].set_color("white")
+    
+    ax.xaxis.label.set_color("white")  # X label color
+    ax.yaxis.label.set_color("white")  # Y label color
+    ax.tick_params(axis="x", colors="white")  # X ticks color
+    ax.tick_params(axis="y", colors="white")  # Y ticks color
+    
+    ax.grid(color="gray", linestyle="--", linewidth=0.5, alpha=0.5)
+    
+    ax.set_title(f"Vapour Pressure variation with temperature", fontsize=14, fontweight="bold", color="white")
+    ax.set_xlabel(f"Temperature (in K)", fontsize=12, fontweight="bold")
+    ax.set_ylabel("Pressure (in Pa)", fontsize=12, fontweight="bold")
+    st.pyplot(fig)
+    
+    st.divider()
+    
+    st.markdown("<h1 style='color:#ffffff;'>🪶History</h1>", unsafe_allow_html=True)
+    st.info("Krypton was discovered in 1898 by **William Ramsay** and **Morris Travers** while studying liquefied air.")
+    
+    col1, col2 = st.columns([2, 1])
+    col2.image("https://cdn.britannica.com/55/97255-004-05284B6E/Rayleigh-William-Ramsay-spark-alkali-argon-Apparatus-1894.jpg",
+               caption = "Apparatus used in the isolation of argon by English physicist Lord Rayleigh and chemist Sir William Ramsay, 1894.")
+    col1.write("Krypton was discovered in Britain in 1898 by Scottish chemist William Ramsay and English chemist Morris Travers."
+               + "They identified the element in the residue left after evaporating nearly all the components of liquid air. "
+               + "Using a similar process, the same scientists discovered neon just a few weeks later. In recognition of his work"
+               + "in identifying a series of noble gases, including krypton, Ramsay was awarded the Nobel Prize in Chemistry in 1904.")
+    col1.write("In 1960, the International Bureau of Weights and Measures established a new definition of the meter, basing it on the"
+               + "wavelength of light emitted by the krypton-86 isotope. Specifically, the meter was defined as 1,650,763.73 wavelengths"
+               + "of light corresponding to the transition between the 2p10 and 5d5 energy levels of krypton-86 in a vacuum. This replaced"
+               + "the previous international prototype meter, a metal bar kept in Sèvres since 1889. Additionally, it rendered obsolete the"
+               + "1927 definition of the ångström, which had been based on the red spectral line of cadmium, redefining 1 Å as 10⁻¹⁰ meters. " 
+               + "The krypton-86 definition remained in use until October 1983, when the meter was redefined in terms of the distance light" 
+               + "travels in a vacuum in 1/299,792,458 of a second.")
+    
+    st.divider()
 else:
    
     st.markdown("""
