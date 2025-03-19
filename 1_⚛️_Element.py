@@ -16,6 +16,7 @@ a = st.radio(
 
 # Main content
 if a == ":red[B]  🔥 Boron":
+    st.sidebar.success("Select a page")
     st.markdown("# **Welcome to the World of Boron** 🧪")
     st.write("Explore the fascinating properties, occurrence, and uses of Boron.")
 
