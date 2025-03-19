@@ -346,16 +346,18 @@ elif a == ":violet[K]  ✨ Potassium":
     S_values = A * np.log(t) + B * t + (C * t**2) / 2 + (D * t**3) / 3 - E / (2 * t**2) + G
 
     st.markdown("#### 📜 Shomate Equations ")
+    
+
     st.latex(r"""
-    C_p^\circ = A + B \cdot t + C \cdot t^2 + D \cdot t^3 + \frac{E}{t^2}
+    C_p^\circ = A + B t + C t^2 + D t^3 + \frac{E}{t^2}
     """)
     
     st.latex(r"""
-    H^\circ - H^\circ_{298.15} = A \cdot t + \frac{B \cdot t^2}{2} + \frac{C \cdot t^3}{3} + \frac{D \cdot t^4}{4} - \frac{E}{t} + F - H
+    H^\circ - H^\circ_{298.15} = A t + \frac{B t^2}{2} + \frac{C t^3}{3} + \frac{D t^4}{4} - \frac{E}{t} + F - H
     """)
     
     st.latex(r"""
-    S^\circ = A \ln t + B \cdot t + \frac{C \cdot t^2}{2} + \frac{D \cdot t^3}{3} - \frac{E}{2 \cdot t^2} + G
+    S^\circ = A \ln t + B t + \frac{C t^2}{2} + \frac{D t^3}{3} - \frac{E}{2 t^2} + G
     """)
     
     
