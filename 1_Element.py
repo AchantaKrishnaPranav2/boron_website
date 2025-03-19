@@ -4,8 +4,7 @@ import matplotlib.pyplot as plt
 
 st.set_page_config(
     page_title="Boron Properties",
-    page_icon="🧪",
-    layout="wide"
+    page_icon="🧪"
 )
 
 # Radio button selection
