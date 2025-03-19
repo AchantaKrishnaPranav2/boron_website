@@ -63,57 +63,25 @@ elif a == ":violet[K]  ✨ Potassium" :
         st.divider()
 
 elif a == ":orange[Kr] 🍀 Krypton" :
-    # Title  
-    st.title("💡 The Hidden Wonders of Krypton ")  
-    st.subheader("A Noble Gas with Superpowers!")  
+   # Title
+    st.title("💡 Mind-Blowing Facts About Krypton 🔥")  
     st.divider()  
     
-    # Fact 1: The Name's Meaning  
-    st.subheader("🔎 **Krypton Means 'Hidden'!**")  
-    st.markdown("This noble gas gets its name from the Greek word **'kryptos'**, meaning **'hidden'**—a perfect fit for an element that's rare and elusive!")  
-    st.divider()  
+    # Facts list
+    facts = [
+        "💨 **Krypton Is a Ghostly Noble Gas 👻** - This colorless, odorless gas got its name from the Greek word *kryptos*, meaning 'hidden'—fitting for an element that’s hard to find!",
+        "🦸‍♂️ **Not Just Superman's Home Planet! 🌍** - Despite its name, krypton has no connection to Kryptonite—the famous fictional mineral that weakens Superman.",
+        "💡 **Krypton Glows Bright in Neon Lights! 🔥** - While krypton itself is invisible, in gas discharge tubes, it emits a beautiful **white-blue glow**, used in specialty lighting.",
+        "🧊 **Colder Than Antarctica ❄️** - Liquid krypton forms at **-153°C (-243°F)**, making it much colder than Earth's coldest temperatures!",
+        "⚡ **Used in High-Powered Lasers 🔥** - Krypton fluoride (KrF) is used in **powerful excimer lasers**, essential for eye surgery and semiconductor manufacturing.",
+        "🚀 **Krypton Can Power Spacecraft! 🚀** - NASA has used krypton gas as a **propellant** in ion thrusters, an advanced technology for deep-space missions.",
+        "🌌 **There’s Krypton in the Air You Breathe! 🌍** - Krypton makes up **0.0001%** of Earth’s atmosphere, meaning every breath you take contains tiny traces of it.",
+        "🎥 **Hollywood Uses Krypton for Cinematic Effects 🎬** - Some high-intensity flash lamps in photography and film lighting contain krypton gas to create ultra-bright flashes.",
+        "💀 **Krypton Gas Can Knock You Out ☠️** - In high concentrations, krypton acts as a **narcotic anesthetic**, potentially leading to unconsciousness!",
+        "⚛️ **Krypton Is Used to Detect Nuclear Bomb Tests ☢️** - Krypton-85, a radioactive isotope, is released during nuclear fission, helping scientists track secret nuclear tests worldwide.",
+    ]
     
-    # Fact 2: Not Just Superman’s Home!  
-    st.subheader("🦸‍♂️ **Krypton ≠ Kryptonite!**")  
-    st.markdown("Despite its sci-fi fame, **krypton is NOT related to Kryptonite**. But hey, if Superman ever needs some cool glow-in-the-dark lighting, krypton gas has his back!")  
-    st.divider()  
-    
-    # Fact 3: Krypton Lights Up the World  
-    st.subheader("💡 **Krypton Creates a Stunning White-Blue Glow**")  
-    st.markdown("Though krypton is **invisible**, when used in gas discharge tubes, it produces a **brilliant white-blue light**, perfect for neon signs and airport runway lights.")  
-    st.divider()  
-    
-    # Fact 4: Super Cold Liquid  
-    st.subheader("❄️ **Colder Than Antarctica!**")  
-    st.markdown("Krypton turns into a liquid at **-153°C (-243°F)**—way colder than Earth’s iciest places! If you had a glass of liquid krypton, it’d freeze your hand instantly.")  
-    st.divider()  
-    
-    # Fact 5: Space Propulsion Power  
-    st.subheader("🚀 **Fuel for the Future? Krypton in Space!**")  
-    st.markdown("NASA has experimented with krypton gas as a **propellant** in ion thrusters, helping satellites and spacecraft travel through space efficiently.")  
-    st.divider()  
-    
-    # Fact 6: There’s Krypton in Your Breath!  
-    st.subheader("🌍 **You Breathe Krypton Every Day!**")  
-    st.markdown("Krypton makes up **0.0001%** of Earth’s atmosphere. That means **every breath you take contains traces of krypton!**")  
-    st.divider()  
-    
-    # Fact 7: The Science Behind Nuclear Detection  
-    st.subheader("☢️ **Spies Use Krypton to Track Nukes!**")  
-    st.markdown("The isotope **Krypton-85** is released in nuclear explosions, allowing scientists and intelligence agencies to detect **secret nuclear tests** worldwide.")  
-    st.divider()  
-    
-    # Fact 8: Krypton’s Hidden Danger  
-    st.subheader("💀 **Too Much Krypton = Instant Nap!**")  
-    st.markdown("At high concentrations, krypton acts as a **narcotic anesthetic**, meaning it can knock you out—just like **laughing gas, but without the giggles!**")  
-    st.divider()  
-    
-    # Fact 9: Hollywood Uses Krypton!  
-    st.subheader("🎥 **Krypton in the Movies!**")  
-    st.markdown("High-intensity flash lamps in photography and movie productions use krypton gas to create **ultra-bright light bursts** for stunning cinematic effects.")  
-    st.divider()  
-    
-    # Fact 10: The Coolest Sci-Fi Element  
-    st.subheader("🌌 **Krypton: The Most Sci-Fi Element?**")  
-    st.markdown("From being Superman’s home planet to powering **futuristic lasers**, krypton is **the most sci-fi-sounding element on the periodic table!**")  
-    st.divider()
+    # Display facts
+    for fact in facts:
+        st.markdown(fact)
+        st.divider()
