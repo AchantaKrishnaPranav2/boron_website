@@ -385,7 +385,7 @@ elif a == ":violet[K]  ✨ Potassium":
     
     
     st.subheader("🔬 Vapor Pressure of Potassium Calculated using Antoine Equation")
-    st.write("log10(P) = A - (B / (T + C))")
+    st.latex(r"\log_{10}(P) = A - \frac{B}{T + C}")
     # Antoine Equation Parameters for Potassium (from NIST)
     A, B, C = 4.45718, 4691.58, 24.195
     T_min, T_max = 679.4, 1033.0  # Temperature range in K
@@ -493,3 +493,45 @@ elif a == ":orange[Kr] 🍀 Krypton" :
     st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/36_%28Kr_I%29_NIST_ASD_emission_spectrum.png/1920px-36_%28Kr_I%29_NIST_ASD_emission_spectrum.png", use_container_width=True)
     
     st.divider()
+
+    st.subheader("🔬 Vapor Pressure of Krypton Calculated using Antoine Equation")
+    st.latex(r"\log_{10}(P) = A - \frac{B}{T + C}")
+    # Antoine Equation Parameters for Potassium (from NIST)
+    A, B, C = 4.2064, 539.004, 8.855	
+    T_min, T_max = 126.68,  208.0  # Temperature range in K
+    
+    # User Input for Temperature Range
+    T_range = st.slider("Select Temperature Range (K)", min_value=int(T_min), max_value=int(T_max), value=(int(T_min), int(T_max)))
+    T_values = np.linspace(T_range[0], T_range[1], 100)
+    
+    # Compute Vapor Pressure using Antoine Equation
+    P_values = 10 ** (A - (B / (T_values + C)))  # Pressure in bar
+    
+    # Plot the Vapor Pressure vs Temperature
+    plt.style.use("ggplot")
+    fig, ax = plt.subplots(figsize=(7, 5))
+    ax.plot(T_values, P_values, label="Vapor Pressure (bar)", color="red", linewidth=2)
+    ax.set_xlabel("Temperature (K)", fontsize=12)
+    ax.set_ylabel("Vapor Pressure (bar)", fontsize=12)
+    ax.set_title("Vapor Pressure of Krypton", fontsize=14)
+    ax.legend()
+    ax.grid(True, linestyle="--", alpha=0.6)
+    
+    # Dark theme settings
+    fig.patch.set_facecolor("#0e1117")
+    ax.set_facecolor("#0e1117")
+    ax.xaxis.label.set_color("white")
+    ax.yaxis.label.set_color("white")
+    ax.title.set_color("white")
+    ax.tick_params(colors="white")
+    ax.spines["top"].set_color("white")
+    ax.spines["bottom"].set_color("white")
+    ax.spines["left"].set_color("white")
+    ax.spines["right"].set_color("white")
+    
+    
+    # Display the Plot
+    st.pyplot(fig)
+    
+    # Explanation
+    st.info("The vapor pressure of Krypton is computed using the Antoine equation with parameters from NIST.")
