@@ -11,7 +11,7 @@ st.set_page_config(
 # Radio button selection
 a = st.radio(
     "Choose an element to explore:",
-    [":red[B]  🔥 Boron", ":violet[K]  ✨ Potassium",":rainbow[Kr]   Krypton"]
+    [":red[B]  🔥 Boron", ":violet[K]  ✨ Potassium",":rainbow[Kr]   Krypton"],
     index=None
 )
 
