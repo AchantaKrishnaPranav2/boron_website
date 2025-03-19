@@ -9,7 +9,29 @@ a = st.radio(
     [":red[B]  🔥 Boron", ":violet[K]  ✨ Potassium",  ":orange[Kr] 🍀 Krypton"],
     index=None)
 if a == ":red[B]  🔥 Boron":
-    st.write("Write here")
+    st.title("🧪 Mind-Blowing Facts About Boron 🔥")
+    st.divider()
+    
+    # Facts list
+    facts = [
+        "💎 **Boron Can Make Fake Diamonds! 💠** - When combined with carbon under high pressure, boron forms **boron carbide**, which is nearly as hard as diamonds!",
+        "🔥 **Boron Burns Green in Fireworks 🎆** - Fireworks and flares use **boron compounds** to create **bright green flames**!",
+        "🚀 **Boron is Used in Rocket Fuel!** - Boron-based fuels, like **boranes**, have been tested for use in **high-energy rocket propellants**.",
+        "💊 **Boron Keeps Your Bones Strong 🦴** - This element helps regulate **calcium and magnesium** in your body, making it crucial for **bone health**.",
+        "🔫 **Used in Bulletproof Vests and Tank Armor 🛡️** - **Boron carbide** is one of the hardest materials known, making it perfect for **bulletproof vests** and **military armor**.",
+        "💥 **Boron Can Absorb Radiation ☢️** - The nuclear industry uses **boron** to **absorb neutrons**, preventing dangerous chain reactions!",
+        "🌱 **Essential for Plant Growth 🌿** - Without boron, plants wouldn’t be able to **grow properly**, as it’s essential for **cell wall formation**.",
+        "🚰 **Boron Helps Purify Water 💧** - **Boron compounds** are used in **water filtration systems** to remove heavy metals and contaminants.",
+        "🦠 **Boron May Have Helped Life Begin on Earth 🌍** - Some scientists believe that boron compounds played a role in **RNA formation**, which led to the origin of life!",
+        "⚛️ **Boron Defies the Rules of Chemistry** - Unlike most elements, **boron forms unique electron-deficient bonds**, making its chemistry fascinatingly weird!",
+        "💡 **Boron Makes Glass Stronger 🏗️** - **Borosilicate glass** (like Pyrex) is heat-resistant and used in **lab equipment, cookware, and telescopes**.",
+        "🧠 **Boron Could Boost Your Brainpower 🧠⚡** - Studies suggest **boron improves memory and focus**, making it important for brain health!",
+    ]
+    
+    # Display facts
+    for fact in facts:
+        st.markdown(fact)
+        st.divider()
 
 elif a == ":violet[K]  ✨ Potassium" :
     
