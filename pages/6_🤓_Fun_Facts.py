@@ -42,7 +42,7 @@ elif a == ":violet[K]  ✨ Potassium" :
 
 elif a == ":orange[Kr] 🍀 Krypton" :
     # Title  
-    st.title("💡 The Hidden Wonders of Krypton 🔥")  
+    st.title("💡 The Hidden Wonders of Krypton ")  
     st.subheader("A Noble Gas with Superpowers!")  
     st.divider()  
     
