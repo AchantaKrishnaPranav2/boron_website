@@ -11,7 +11,7 @@ st.set_page_config(
 # Radio button selection
 a = st.radio(
     "Choose an element to explore:",
-    [":red[B]  🔥 Boron", ":violet[K]  ✨ Potassium",":green[Kr]   Krypton"]
+    [":red[B]  🔥 Boron", ":violet[K]  ✨ Potassium",":rainbow[Kr]   Krypton"]
     index=None
 )
 
@@ -259,7 +259,7 @@ elif a == ":violet[K]  ✨ Potassium":
     col1.write("Potassium compounds such as potash (K₂CO₃) were used in glassmaking, soap production, and fertilizers long before the element was purified. Today, potassium remains essential in industries, agriculture, and biological systems.")
     
     st.divider()
-elif a == ":green[Kr]   Krypton" :
+elif a == ":rainbow[Kr]   Krypton" :
     st.markdown("<h1 style='color:#ffffff;'>⚛️ Krypton: A Noble Gas with Unique Uses</h1>", unsafe_allow_html=True)
     st.sidebar.success("Select a page")
     
