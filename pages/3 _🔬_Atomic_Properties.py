@@ -346,9 +346,9 @@ elif a == ":violet[K]  ✨ Potassium":
     S_values = A * np.log(t) + B * t + (C * t**2) / 2 + (D * t**3) / 3 - E / (2 * t**2) + G
     
     
-    
+    col1, col2 = st.columns(2)
     # 📌 Plot Cp vs Temperature
-    st.subheader("Cp vs T")
+    col1.subheader("Cp vs T")
     fig = plt.figure(figsize=(7, 4))
     plt.plot(T_values, Cp_values, label="Heat Capacity (Cp)", color="red")
     plt.xlabel("Temperature (K)", color="white")
@@ -356,10 +356,10 @@ elif a == ":violet[K]  ✨ Potassium":
     plt.title("Heat Capacity vs Temperature", color="white")
     plt.legend()
     plt.grid()
-    st.pyplot(fig)
+    col1.pyplot(fig)
     
     # 📌 Plot Enthalpy (H) vs Temperature
-    st.subheader("H vs T")
+    col2.subheader("H vs T")
     fig = plt.figure(figsize=(7, 4))
     plt.plot(T_values, H_values, label="Enthalpy (H)", color="blue")
     plt.xlabel("Temperature (K)", color="white")
@@ -367,10 +367,10 @@ elif a == ":violet[K]  ✨ Potassium":
     plt.title("Enthalpy vs Temperature", color="white")
     plt.legend()
     plt.grid()
-    st.pyplot(fig)
+    col2.pyplot(fig)
     
     # 📌 Plot Entropy (S) vs Temperature
-    st.subheader("S vs T")
+    col1.subheader("S vs T")
     fig = plt.figure(figsize=(7, 4))
     plt.plot(T_values, S_values, label="Entropy (S)", color="green")
     plt.xlabel("Temperature (K)", color="white")
@@ -378,7 +378,7 @@ elif a == ":violet[K]  ✨ Potassium":
     plt.title("Entropy vs Temperature", color="white")
     plt.legend()
     plt.grid()
-    st.pyplot(fig)
+    col1.pyplot(fig)
     
     # Explanation
     st.info("The thermodynamic properties of potassium are calculated using the Shomate equation. Select a temperature range to view the corresponding data.")
