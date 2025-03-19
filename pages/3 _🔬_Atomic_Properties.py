@@ -494,6 +494,63 @@ elif a == ":orange[Kr] 🍀 Krypton" :
     
     st.divider()
 
+    st.subheader("📊 Heat Capacity, Enthalpy, and Entropy vs Temperature")
+
+    
+    # Define temperature range (Replace with actual values if needed)
+    T_values = np.linspace(298, 6000, 50)  # Given range from image
+    
+    # Given Shomate equation parameters for Krypton (from image)
+    A, B, C, D, E, F, G, H = 20.78603, 4.850638e-10, -1.582916e-10, 1.525102e-11, 3.196347e-11, -6.197341, 189.2390, 0.000000
+    
+    # Convert temperature to t = T / 1000
+    t = T_values / 1000
+    
+    # Calculate Cp, H, S using Shomate equations
+    Cp_values = A + B * t + C * t**2 + D * t**3 + E / t**2
+    H_values = A * t + (B * t**2) / 2 + (C * t**3) / 3 + (D * t**4) / 4 - E / t + F - H
+    S_values = A * np.log(t) + B * t + (C * t**2) / 2 + (D * t**3) / 3 - E / (2 * t**2) + G
+    
+    # Create two columns for side-by-side plots
+    col1, col2 = st.columns(2)
+    
+    # 📌 Plot Cp vs Temperature
+    col1.subheader("Cp vs T")
+    fig = plt.figure(figsize=(7, 4))
+    plt.plot(T_values, Cp_values, label="Heat Capacity (Cp)", color="red")
+    plt.xlabel("Temperature (K)")
+    plt.ylabel("Cp (J/mol*K)")
+    plt.title("Heat Capacity vs Temperature")
+    plt.legend()
+    plt.grid()
+    col1.pyplot(fig)
+    
+    # 📌 Plot Enthalpy (H) vs Temperature
+    col2.subheader("H vs T")
+    fig = plt.figure(figsize=(7, 4))
+    plt.plot(T_values, H_values, label="Enthalpy (H)", color="blue")
+    plt.xlabel("Temperature (K)")
+    plt.ylabel("H (kJ/mol)")
+    plt.title("Enthalpy vs Temperature")
+    plt.legend()
+    plt.grid()
+    col2.pyplot(fig)
+    
+    # 📌 Plot Entropy (S) vs Temperature
+    col1.subheader("S vs T")
+    fig = plt.figure(figsize=(7, 4))
+    plt.plot(T_values, S_values, label="Entropy (S)", color="green")
+    plt.xlabel("Temperature (K)")
+    plt.ylabel("S (J/mol*K)")
+    plt.title("Entropy vs Temperature")
+    plt.legend()
+    plt.grid()
+    col1.pyplot(fig)
+    
+    # Explanation
+    st.info("The thermodynamic properties of Krypton are calculated using the Shomate equation. Adjust the temperature range to see the changes.")
+    st.divider()
+
     st.subheader("🔬 Vapor Pressure of Krypton Calculated using Antoine Equation")
     st.latex(r"\log_{10}(P) = A - \frac{B}{T + C}")
     # Antoine Equation Parameters for Potassium (from NIST)
