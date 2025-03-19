@@ -6,7 +6,7 @@ st.set_page_config(
 )
 a = st.radio(
     "Choose an element to explore:",
-    [":red[B]  🔥 Boron", ":violet[K]  ✨ Potassium"],
+    [":red[B]  🔥 Boron", ":violet[K]  ✨ Potassium",  ":orange[Kr] 🍀 Krypton"],
     index=None)
 if a == ":red[B]  🔥 Boron":
     st.title("🔎 Boron - Occurrences and Applications")
@@ -248,3 +248,40 @@ elif a == ":violet[K]  ✨ Potassium":
     st.subheader("🚀 Future Potential & Research")
     st.write("🔹 Scientists are exploring potassium-based superconductors for next-gen electronics.")
     st.write("🔹 Potassium alloys may play a role in advanced batteries and energy storage.")
+
+elif a == ":orange[Kr] 🍀 Krypton" :
+
+    st.title("🔎Krypton - Occurrences and Applications")
+    st.subheader("🌍 Occurrence and Production of Krypton")
+    col1, col2 = st.columns(2)
+    col1.write("Krypton is a rare noble gas present in Earth's atmosphere at a concentration of approximately 1 part per million (ppm). Unlike helium, which is light and escapes Earth's gravity, krypton has a higher atomic mass (83.8 u), allowing it to remain trapped in the atmosphere since the planet's formation. Krypton, along with other noble gases like neon and argon, was likely retained due to gravitational binding and the Earth's protective atmosphere, preventing significant losses over time.")
+    col2.image("https://i.ytimg.com/vi/k9mD21sQWuo/hqdefault.jpg", caption="Fractional distillation of krypton from air")
+    st.write("The primary method of obtaining krypton is fractional distillation of liquid air, where air is cooled and separated into its various components based on their boiling points. Since krypton has a higher boiling point than nitrogen and oxygen, it can be isolated efficiently during this process. The commercial production of krypton is often associated with the separation of argon, neon, and xenon, as all these noble gases exist in trace amounts in the atmosphere.")
+    
+    st.divider()
+    
+    st.subheader("🛃 Applications and uses of Krypton")
+    
+    st.markdown("<h4 style='color:#15abd7;'>🔹Experimental Particle Pyhsics (calorimeters)</h4>", unsafe_allow_html=True)
+    st.write("""**Liquid Krypton** is used in **electromagnetic calorimeters** due to its superior spatial resolution. 
+    A key example is the **NA48 experiment at CERN**, which utilized **27 tonnes of liquid krypton** in its calorimeter.
+    While **liquid argon is cheaper**, krypton provides a **smaller Molière radius (4.7 cm)**, leading to **less overlapping and sharper resolution**.""")
+    
+    st.markdown("<h5 style='color:#deec53;'>📊 Krypton vs. Argon Calorimeter Properties</h5>", unsafe_allow_html=True)
+    table_data = {
+        "Property": ["Molière Radius (cm)", "Radiation Length (X₀)", "Density (g/cm³)"],
+        "Liquid Krypton": [4.7, 4.7, 2.4],
+        "Liquid Argon": [9.6, 14.0, 1.4]
+    }
+    st.dataframe(table_data, hide_index=True)
+    
+    st.markdown("<h4 style='color:#15abd7;'>🔹Krypton in Lighting Applications</h4>", unsafe_allow_html=True)
+    col1, col2 = st.columns(2)
+    col1.write("Krypton is commonly used in energy-efficient fluorescent lamps, where it is mixed with argon to reduce power consumption. However, this comes at the cost of lower light output and higher expenses, as krypton is approximately 100 times more expensive than argon. Additionally, krypton, along with xenon, is used in incandescent bulbs to minimize filament evaporation. This allows the filament to operate at higher temperatures, enhancing efficiency and longevity.")
+    col2.image("https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Krypton_discharge_tube.jpg/1280px-Krypton_discharge_tube.jpg", caption="A krypton-filled discharge tube glowing white")
+    
+    st.markdown("<h4 style='color:#15abd7;'>🔹Other Applications</h4>", unsafe_allow_html=True)
+    st.write("🔸 The krypton fluoride laser is important in nuclear fusion energy research in confinement experiments. The laser has high beam uniformity, short wavelength, and the spot size can be varied to track an imploding pellet.")
+    st.write("🔸Krypton-83 has application in magnetic resonance imaging (MRI) for imaging airways. In particular, it enables the radiologist to distinguish between hydrophobic and hydrophilic surfaces containing an airway.")
+    st.write("🔸Although xenon has potential for use in computed tomography (CT) to assess regional ventilation, its anesthetic properties limit its fraction in the breathing gas to 35%. A breathing mixture of 30% xenon and 30% krypton is comparable in effectiveness for CT to a 0.4 xenon fraction, while avoiding the unwanted effects of a high partial pressure of xenon gas.")
+    st.divider()
