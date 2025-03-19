@@ -7,7 +7,7 @@ st.set_page_config(
 )
 a = st.radio(
     "Choose an element to explore:",
-    [":red[B]  🔥 Boron", ":violet[K]  ✨ Potassium"],
+    [":red[B]  🔥 Boron", ":violet[K]  ✨ Potassium",  ":orange[Kr] 🍀 Krypton"],
     index=None)
 if a == ":red[B]  🔥 Boron":
     st.title("🧩 Boron - Structure")
@@ -191,3 +191,92 @@ elif a == ":violet[K]  ✨ Potassium":
     st.write("**bulk Modulus of Potassium:** 3.1 GPa")
     st.subheader("🔹shear modulus of potassium:")
     st.write("**shear Modulus of Potassium:** 1.3 GPa")
+
+elif a == ":orange[Kr] 🍀 Krypton" :
+    st.title("🧩 Krypton - Structure")
+    st.info("Krypton is a noble gas, which means that under standard temperature and pressure (STP), it exists as a monatomic gas. However, krypton can solidify under extremely low temperatures and high pressures. When it becomes a solid, it adopts a **face-centered cubic (FCC)** crystal structure.")
+    
+    st.markdown("<h3 style='color:#9ef33e; text-align: center;'>FCC Structure of Solid Krypton</h3>", unsafe_allow_html=True)
+    
+    # FCC lattice points
+    fcc_points = np.array([
+        [0, 0, 0], [1, 0, 0], [0, 1, 0], [0, 0, 1],
+        [1, 1, 0], [1, 0, 1], [0, 1, 1], [1, 1, 1],
+        [0.5, 0.5, 0], [0.5, 0, 0.5], [0, 0.5, 0.5],
+        [0.5, 0.5, 1], [0.5, 1, 0.5], [1, 0.5, 0.5]
+    ])
+    
+    # Define cube edges (external edges only)
+    edges = [
+        (0, 1), (1, 4), (4, 2), (2, 0),  # Bottom face
+        (3, 5), (5, 7), (7, 6), (6, 3),  # Top face
+        (0, 3), (1, 5), (2, 6), (4, 7)   # Vertical edges
+    ]
+    
+    # Create 3D figure
+    fig = go.Figure()
+    
+    # Add Krypton atoms as scatter points
+    fig.add_trace(go.Scatter3d(
+        x=fcc_points[:, 0], y=fcc_points[:, 1], z=fcc_points[:, 2],
+        mode='markers', marker=dict(size=15, color="cyan", opacity=1, symbol="circle"),
+        name="Krypton Atoms"
+    ))
+    
+    # Add cube edges
+    for edge in edges:
+        p1, p2 = fcc_points[edge[0]], fcc_points[edge[1]]
+        fig.add_trace(go.Scatter3d(
+            x=[p1[0], p2[0]], y=[p1[1], p2[1]], z=[p1[2], p2[2]],
+            mode='lines', line=dict(color="white", width=3),
+            showlegend=False
+        ))
+    
+    # Customize layout
+    fig.update_layout(
+        scene=dict(
+            xaxis=dict(visible=False),
+            yaxis=dict(visible=False),
+            zaxis=dict(visible=False),
+            bgcolor="black"
+        ),
+        margin=dict(l=0, r=0, t=30, b=0),
+        paper_bgcolor="black",
+        font=dict(color="white")
+    )
+    
+    # Display in Streamlit
+    st.plotly_chart(fig, use_container_width=True)
+    st.info("Lattice constant : a = 583.57 pm")
+    
+    st.divider()
+    
+    st.subheader("🌀  Other Properties for Krypton")
+    table_data = {
+        "Property": ["Thermal Conductivity (W / m.K)", "Magnetic Ordering", "Molar magnetic susceptibility (cm³/mol)", "Speed of sound in gas (m/s)", "Speed of sound in liquid (m/s)"],
+        "Value": ["0.00943", "Diamagnetic", "-0.0000286", "221", "1120"],
+    }
+    st.dataframe(table_data, hide_index=True)
+    st.divider()
+    
+    st.subheader("🔹Why does Krypton have FCC Structure ?")
+    col1, col2, col3 = st.columns(3)
+    col1.markdown("<h5 style='color:#9ef33e; text-align: center;'>Weak Intermolecular Forces (Van der Waals Forces)</h5>", unsafe_allow_html=True)
+    col1.write("Krypton atoms do not form strong chemical bonds due to their full outer electron shell. The only forces holding solid krypton together are Van der Waals forces (weak London dispersion forces).")
+    col2.markdown("<h5 style='color:#9ef33e; text-align: center;'>FCC is Common for Noble Gases in Solid Form</h5>", unsafe_allow_html=True)
+    col2.write("  ")
+    col2.write("Other noble gases like argon (Ar), neon (Ne), and xenon (Xe) also crystallize in an FCC structure when solid. The FCC structure allows efficient packing of spherical atoms with minimal repulsion.")
+    col3.markdown("<h5 style='color:#9ef33e; text-align: center;'>Solidification at very Low-Temperature</h5>", unsafe_allow_html=True)
+    col3.write("  ")
+    col3.write("Krypton solidifies at 115.79 K (-157.36°C, -251.25°F) under atmospheric pressure. At these temperatures, thermal energy is low, allowing the weak Van der Waals interactions to hold atoms in an FCC lattice.")
+    
+    st.divider()
+    
+    st.subheader("📚Structure of other compounds of Krypton")
+    col1, col2 = st.columns(2)
+    col2.image("https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Krypton_hydride_structure.png/330px-Krypton_hydride_structure.png")
+    col1.write("Kr(H₂)₄ is a solid-state compound formed under high-pressure conditions where krypton atoms (Kr) trap hydrogen molecules (H₂) in a unique crystalline structure. This compound is classified as a van der Waals (or clathrate-like) solid, meaning that the krypton atoms act as a host and the hydrogen molecules behave as guests.")
+    col1.write("The krypton atoms form an octahedral arrangement within the crystal lattice."
+     +"This means each krypton atom is surrounded by six neighboring krypton atoms, forming an FCC (face-centered cubic) substructure.")
+    
+    st.divider()
