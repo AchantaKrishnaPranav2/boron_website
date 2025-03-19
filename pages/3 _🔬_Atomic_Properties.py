@@ -278,52 +278,7 @@ elif a == ":violet[K]  ✨ Potassium":
     
     st.plotly_chart(fig, use_container_width=True)
     
-    st.divider()
-    import streamlit as st
-    import numpy as np
-    
     st.subheader("  ")
-    
-    
-    st.subheader("📈 Variation of Heat Capacity with Temperature")
-    
-    # User input for temperature range
-    temp_range = st.slider("Select Temperature Range (K)", 50, 1000, (50, 800))
-    
-    # Define temperature range based on user input
-    T = np.linspace(temp_range[0], temp_range[1], 100)  
-    
-    # Empirical equation for Cp (J/g·K)
-    Cp = 0.73 + 0.00015 * T - 2.5e-8 * T**2  
-    
-    # Create plot
-    fig, ax = plt.subplots(figsize=(6, 4))
-    ax.plot(T, Cp, color="orange", linewidth=2, label="Specific Heat Capacity (J/g·K)")
-    ax.set_xlabel("Temperature (K)", fontsize=12)
-    ax.set_ylabel("Specific Heat Capacity (J/g·K)", fontsize=12)
-    ax.set_title("Heat Capacity of Potassium vs Temperature", fontsize=14)
-    ax.legend()
-    ax.grid(True, linestyle="--", alpha=0.5)
-    
-    # Dark theme settings
-    fig.patch.set_facecolor("#0e1117")
-    ax.set_facecolor("#0e1117")
-    ax.xaxis.label.set_color("white")
-    ax.yaxis.label.set_color("white")
-    ax.title.set_color("white")
-    ax.tick_params(colors="white")
-    ax.spines["top"].set_color("white")
-    ax.spines["bottom"].set_color("white")
-    ax.spines["left"].set_color("white")
-    ax.spines["right"].set_color("white")
-    
-    st.pyplot(fig)
-    
-    st.write(
-        f"The specific heat capacity of potassium **increases with temperature** within the selected range: "
-        f"{temp_range[0]}K to {temp_range[1]}K. At very high temperatures, it approaches a constant value due to the Dulong-Petit limit."
-    )
-    
     
     # Atomic Spectra
     st.subheader("🌈 Atomic Spectra")
@@ -358,6 +313,118 @@ elif a == ":violet[K]  ✨ Potassium":
     # Crystal Structure
     st.subheader("💎 Crystal Structure")
     st.write("Potassium crystallizes in a body-centered cubic (BCC) structure, contributing to its malleability and softness.")
+    
+    st.subheader("🔥 Thermodynamic Properties of Potassium")
+    st.write("Heat Capacity (Cp), Enthalpy (H), and Entropy (S) using Shomate Equation")
+    
+    # Constants for two temperature ranges from the table
+    shomate_params = {
+        "1039.54 - 1800 K": {"A": 20.66122, "B": 0.391869, "C": -0.417344, "D": 0.145582, "E": 0.003764, "F": 82.83860, "G": 185.2650, "H": 88.99996},
+        "1800 - 6000 K": {"A": 58.70570, "B": -27.38277, "C": 6.730509, "D": -0.420844, "E": -25.87921, "F": 32.37931, "G": 198.3777, "H": 88.99996}
+    }
+    
+    # Temperature range selector
+    temp_range = st.radio("Select Temperature Range (K):", ["1039.54 - 1800 K", "1800 - 6000 K"])
+    T_min, T_max = map(float, temp_range.split(" K")[0].split(" - "))
+    
+    import numpy as np
+    import matplotlib.pyplot as plt
+    import streamlit as st
+    
+    # Sample Temperature values (replace with actual data)
+    T_values = np.linspace(1039.54, 1800, 50)
+    
+    # Given Shomate equation parameters for 1039.54 to 1800 K
+    A, B, C, D, E, F, G, H = 20.66122, 0.391869, -0.417344, 0.145582, 0.003764, 82.83860, 185.2650, 88.99996
+    
+    # Convert temperature to t = T / 1000
+    t = T_values / 1000
+    
+    # Calculate Cp, H, S
+    Cp_values = A + B * t + C * t**2 + D * t**3 + E / t**2
+    H_values = A * t + (B * t**2) / 2 + (C * t**3) / 3 + (D * t**4) / 4 - E / t + F - H
+    S_values = A * np.log(t) + B * t + (C * t**2) / 2 + (D * t**3) / 3 - E / (2 * t**2) + G
+    
+    
+    
+    # 📌 Plot Cp vs Temperature
+    st.subheader("Cp vs T")
+    fig = plt.figure(figsize=(7, 4))
+    plt.plot(T_values, Cp_values, label="Heat Capacity (Cp)", color="red")
+    plt.xlabel("Temperature (K)", color="white")
+    plt.ylabel("Cp (J/mol*K)", color="white")
+    plt.title("Heat Capacity vs Temperature", color="white")
+    plt.legend()
+    plt.grid()
+    st.pyplot(fig)
+    
+    # 📌 Plot Enthalpy (H) vs Temperature
+    st.subheader("H vs T")
+    fig = plt.figure(figsize=(7, 4))
+    plt.plot(T_values, H_values, label="Enthalpy (H)", color="blue")
+    plt.xlabel("Temperature (K)", color="white")
+    plt.ylabel("H (kJ/mol)", color="white")
+    plt.title("Enthalpy vs Temperature", color="white")
+    plt.legend()
+    plt.grid()
+    st.pyplot(fig)
+    
+    # 📌 Plot Entropy (S) vs Temperature
+    st.subheader("S vs T")
+    fig = plt.figure(figsize=(7, 4))
+    plt.plot(T_values, S_values, label="Entropy (S)", color="green")
+    plt.xlabel("Temperature (K)", color="white")
+    plt.ylabel("S (J/mol*K)", color="white")
+    plt.title("Entropy vs Temperature", color="white")
+    plt.legend()
+    plt.grid()
+    st.pyplot(fig)
+    
+    # Explanation
+    st.info("The thermodynamic properties of potassium are calculated using the Shomate equation. Select a temperature range to view the corresponding data.")
+    
+    
+    st.subheader("🔬 Vapor Pressure of Potassium Calculated using Antoine Equation")
+    st.write("log10(P) = A - (B / (T + C))")
+    # Antoine Equation Parameters for Potassium (from NIST)
+    A, B, C = 4.45718, 4691.58, 24.195
+    T_min, T_max = 679.4, 1033.0  # Temperature range in K
+    
+    # User Input for Temperature Range
+    T_range = st.slider("Select Temperature Range (K)", min_value=int(T_min), max_value=int(T_max), value=(int(T_min), int(T_max)))
+    T_values = np.linspace(T_range[0], T_range[1], 100)
+    
+    # Compute Vapor Pressure using Antoine Equation
+    P_values = 10 ** (A - (B / (T_values + C)))  # Pressure in bar
+    
+    # Plot the Vapor Pressure vs Temperature
+    plt.style.use("ggplot")
+    fig, ax = plt.subplots(figsize=(7, 5))
+    ax.plot(T_values, P_values, label="Vapor Pressure (bar)", color="red", linewidth=2)
+    ax.set_xlabel("Temperature (K)", fontsize=12)
+    ax.set_ylabel("Vapor Pressure (bar)", fontsize=12)
+    ax.set_title("Vapor Pressure of Potassium", fontsize=14)
+    ax.legend()
+    ax.grid(True, linestyle="--", alpha=0.6)
+    
+    # Dark theme settings
+    fig.patch.set_facecolor("#0e1117")
+    ax.set_facecolor("#0e1117")
+    ax.xaxis.label.set_color("white")
+    ax.yaxis.label.set_color("white")
+    ax.title.set_color("white")
+    ax.tick_params(colors="white")
+    ax.spines["top"].set_color("white")
+    ax.spines["bottom"].set_color("white")
+    ax.spines["left"].set_color("white")
+    ax.spines["right"].set_color("white")
+    
+    
+    # Display the Plot
+    st.pyplot(fig)
+    
+    # Explanation
+    st.info("The vapor pressure of potassium is computed using the Antoine equation with parameters from NIST.")
 
 elif a == ":orange[Kr] 🍀 Krypton" :
     st.title("🔬 Krypton - Atomic Properties")
