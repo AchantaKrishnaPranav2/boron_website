@@ -1,7 +1,7 @@
 import streamlit as st
 
 st.set_page_config(
-    page_title="Boron - Occurrences and Applications",
+    page_title="Occurrences and Applications",
     page_icon="🔎",
 )
 a = st.radio(
