@@ -21,4 +21,4 @@ This website was made as part of a Group project  of the course CH2160 (Material
 - NumPy
 
 ## How to run 
-- You can access this website via this url : project-msch.streamlit.app
+- You can access this website via this url : https://project-msch.streamlit.app
